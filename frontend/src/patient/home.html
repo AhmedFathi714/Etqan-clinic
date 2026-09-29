@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href=".../output.css" rel="stylesheet" />
+
+    <title>Login</title>
+  </head>
+
+  <body class="bg-neutral-50">
+    <div class="min-h-screen flex items-center justify-center px-4">
+      <form class="w-full max-w-sm">
+        <div class="mb-5">
+          <label
+            for="email"
+            class="block mb-2.5 text-sm font-medium text-neutral-800"
+          >
+            Your email
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            class="bg-white border border-neutral-300 text-neutral-900 text-sm rounded-lg focus:ring-primary-300 focus:border-primary-500 block w-full px-3 py-2.5 shadow-sm placeholder:text-neutral-400"
+            placeholder="name@example.com"
+            required
+          />
+        </div>
+
+        <div class="mb-5">
+          <label
+            for="password"
+            class="block mb-2.5 text-sm font-medium text-neutral-800"
+          >
+            Your password
+          </label>
+
+          <input
+            type="password"
+            id="password"
+            class="bg-white border border-neutral-300 text-neutral-900 text-sm rounded-lg focus:ring-primary-300 focus:border-primary-500 block w-full px-3 py-2.5 shadow-sm placeholder:text-neutral-400"
+            placeholder="••••••••"
+            required
+          />
+        </div>
+
+        <div class="flex items-center mb-5">
+          <input
+            id="remember"
+            type="checkbox"
+            class="w-4 h-4 border border-neutral-300 rounded focus:ring-2 focus:ring-primary-300"
+          />
+
+          <label
+            for="remember"
+            class="ms-2 text-sm font-medium text-neutral-700"
+          >
+            Remember me
+          </label>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-4 py-2.5 focus:outline-none transition"
+        >
+          Sign In
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

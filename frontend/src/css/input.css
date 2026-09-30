@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Cairo", sans-serif;
+  }
+
+  body {
+    @apply bg-surface-page text-neutral-900 antialiased;
+  }
+
+  .doctor-portal {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    direction: ltr;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2
+           rounded-button bg-primary px-5 py-2.5
+           font-semibold text-white transition-colors
+           hover:bg-primary-700;
+  }
+
+  .btn-secondary {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2
+           rounded-button border border-primary-200
+           bg-white px-5 py-2.5 font-semibold text-primary
+           transition-colors hover:bg-primary-50;
+  }
+
+  .card {
+    @apply rounded-card border border-neutral-200 bg-white shadow-card;
+  }
+
+  .input {
+    @apply min-h-[44px] w-full rounded-input border
+           border-neutral-300 bg-white px-3 py-2
+           text-neutral-900 outline-none
+           focus:border-primary focus:ring-2 focus:ring-primary-100;
+  }
+}

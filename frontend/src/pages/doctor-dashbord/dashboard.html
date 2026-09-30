@@ -1,0 +1,1134 @@
+<!doctype html>
+<html class="h-full" dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Etqan Clinician Workspace - Today</title>
+    <!-- Google Fonts & Material Symbols -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind Play CDN with required plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              surface: "#eafdff",
+              "outline-variant": "#c2c7d0",
+              "secondary-container": "#84f0fe",
+              "tertiary-container": "#396a6f",
+              "on-secondary-container": "#006d78",
+              "on-tertiary-fixed-variant": "#1a4e52",
+              outline: "#737780",
+              primary: "#1d4d7c",
+              "inverse-surface": "#223335",
+              "on-primary": "#ffffff",
+              error: "#ba1a1a",
+              "on-secondary-fixed-variant": "#004f57",
+              "on-secondary": "#ffffff",
+              "surface-dim": "#cadee0",
+              "secondary-fixed-dim": "#69d6e4",
+              background: "#eafdff",
+              "surface-container": "#def2f4",
+              "inverse-primary": "#a0c9ff",
+              "on-secondary-fixed": "#001f23",
+              "on-surface-variant": "#42474f",
+              "tertiary-fixed-dim": "#9dcfd4",
+              "on-tertiary-fixed": "#002022",
+              "surface-bright": "#eafdff",
+              "on-tertiary-container": "#b6e8ed",
+              "on-primary-fixed-variant": "#164978",
+              tertiary: "#1f5256",
+              "on-background": "#0d1e20",
+              "primary-container": "#396596",
+              "surface-container-low": "#e4f7f9",
+              "on-tertiary": "#ffffff",
+              "primary-fixed-dim": "#a0c9ff",
+              "surface-container-lowest": "#ffffff",
+              "error-container": "#ffdad6",
+              "surface-container-high": "#d8ecee",
+              secondary: "#006973",
+              "surface-tint": "#346191",
+              "on-error-container": "#93000a",
+              "primary-fixed": "#d2e4ff",
+              "inverse-on-surface": "#e1f4f6",
+              "secondary-fixed": "#90f1ff",
+              "surface-container-highest": "#d3e6e8",
+              "on-primary-container": "#cde1ff",
+              "tertiary-fixed": "#b9ebf0",
+              "on-primary-fixed": "#001c37",
+              "on-surface": "#0d1e20",
+              "on-error": "#ffffff",
+              "surface-variant": "#d3e6e8",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "space-sm": "0.5rem",
+              "space-lg": "1.5rem",
+              "space-md": "1rem",
+              "space-xl": "2.5rem",
+              margin: "2rem",
+              "space-xs": "0.25rem",
+              gutter: "1.5rem",
+            },
+            fontFamily: {
+              "headline-xl": ["Plus Jakarta Sans"],
+              "body-lg": ["Plus Jakarta Sans"],
+              "headline-xl-mobile": ["Plus Jakarta Sans"],
+              "label-md": ["Plus Jakarta Sans"],
+              "title-lg": ["Plus Jakarta Sans"],
+              "headline-lg": ["Plus Jakarta Sans"],
+              "headline-lg-mobile": ["Plus Jakarta Sans"],
+              "body-md": ["Plus Jakarta Sans"],
+              "label-sm": ["Plus Jakarta Sans"],
+              "headline-md": ["Plus Jakarta Sans"],
+              "title-md": ["Plus Jakarta Sans"],
+              "label-lg": ["Plus Jakarta Sans"],
+            },
+            fontSize: {
+              "headline-xl": [
+                "40px",
+                { lineHeight: "48px", fontWeight: "700" },
+              ],
+              "body-lg": ["16px", { lineHeight: "26px", fontWeight: "400" }],
+              "headline-xl-mobile": [
+                "30px",
+                { lineHeight: "38px", fontWeight: "700" },
+              ],
+              "label-md": ["12px", { lineHeight: "16px", fontWeight: "500" }],
+              "title-lg": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+              "headline-lg": [
+                "32px",
+                { lineHeight: "40px", fontWeight: "600" },
+              ],
+              "headline-lg-mobile": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "600" },
+              ],
+              "body-md": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+              "label-sm": ["11px", { lineHeight: "14px", fontWeight: "500" }],
+              "headline-md": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "600" },
+              ],
+              "title-md": ["18px", { lineHeight: "26px", fontWeight: "500" }],
+              "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #f8fbfc;
+        color: #0d1e20;
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-family: "Material Symbols Outlined";
+        font-weight: normal;
+        font-style: normal;
+        font-size: 20px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-feature-settings: "liga";
+        -webkit-font-smoothing: antialiased;
+      }
+      .elevation-level-1 {
+        box-shadow: 0 4px 20px -2px rgba(57, 101, 150, 0.05);
+      }
+      .elevation-level-2 {
+        box-shadow: 0 10px 30px -4px rgba(57, 101, 150, 0.08);
+      }
+      .thin-border {
+        border: 1px solid rgba(168, 218, 223, 0.45);
+      }
+    </style>
+  </head>
+  <body class="min-h-full flex flex-col bg-[#F8FBFC]">
+    <!-- TopNavBar (Clinician Workspace Header) -->
+    <header
+      class="bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant/30 dark:border-outline/20 sticky top-0 z-40"
+    >
+      <div class="w-full px-6 lg:px-12 h-16 flex justify-between items-center">
+        <!-- Brand & Title Cluster -->
+        <div class="flex items-center gap-6">
+          <a class="flex items-center gap-3" href="#">
+            <img
+              alt="Etqan Physio Logo"
+              class="h-8 w-auto object-contain"
+              src="https://lh3.googleusercontent.com/aida/AEtjO1WGGofEEdpX2vYHo4Ut9erfIQ7nIyFV_w31dEL9Ji8U9TftjT_Jjg7rxy98Vr2ZIvfm_fXsvyww4zqUBNqI2ElgRmFENthTfRZTS_hVzkDItjzf_pxpsjmXIDrmQdUjatebOCvwUP4lgUWULxl2g1cYDNvCM-7hok8InKaDhKxyLMVyMQ2_FFKim2XFllNmXpi-ov7KnqQxAi7HKYojhPweB8YS2awbWrDn1N2ADpieF60ZNxdzErITLDo"
+            />
+            <div
+              class="h-5 w-[1px] bg-outline-variant/40 hidden sm:block"
+            ></div>
+            <span
+              class="text-title-md font-title-md font-semibold text-primary dark:text-inverse-primary tracking-normal hidden md:inline"
+            >
+              Etqan Clinician Workspace
+            </span>
+          </a>
+          <!-- Workspace Role Switcher Trigger -->
+          <div class="relative">
+            <button
+              class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container-low hover:bg-surface-container text-secondary text-label-md font-label-md transition-colors duration-150"
+              id="workspace-switcher-btn"
+            >
+              <span class="material-symbols-outlined text-[16px]"
+                >sync_alt</span
+              >
+              <span>Doctor Workspace</span>
+              <span class="material-symbols-outlined text-[14px]"
+                >expand_more</span
+              >
+            </button>
+          </div>
+        </div>
+        <!-- Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8">
+          <!-- Today (Active) -->
+          <a
+            class="text-primary dark:text-inverse-primary font-semibold border-b-2 border-primary dark:border-inverse-primary pb-1 text-label-lg font-label-lg flex items-center gap-1.5"
+            href="#"
+          >
+            <span>Today</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          </a>
+          <!-- Patients -->
+          <a
+            class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary pb-1 transition-colors duration-150 text-label-lg font-label-lg"
+            href="#"
+          >
+            Patients
+          </a>
+          <!-- Schedule -->
+          <a
+            class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary pb-1 transition-colors duration-150 text-label-lg font-label-lg"
+            href="#"
+          >
+            Schedule
+          </a>
+          <!-- Profile -->
+          <a
+            class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary pb-1 transition-colors duration-150 text-label-lg font-label-lg"
+            href="#"
+          >
+            Profile
+          </a>
+        </nav>
+        <!-- Right Trailing Profile & Actions -->
+        <div class="flex items-center gap-3">
+          <!-- Trailing Icon Actions -->
+          <button
+            class="p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-lg transition-colors duration-150 relative"
+            title="Calendar Today"
+          >
+            <span class="material-symbols-outlined">calendar_today</span>
+          </button>
+          <button
+            class="p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-lg transition-colors duration-150 relative"
+            title="Notifications"
+          >
+            <span class="material-symbols-outlined">notifications</span>
+            <span
+              class="absolute top-2 right-2 w-2 h-2 rounded-full bg-secondary"
+            ></span>
+          </button>
+          <div class="h-6 w-[1px] bg-outline-variant/30 mx-1"></div>
+          <!-- Clinician Profile Avatar & Meta -->
+          <div class="flex items-center gap-3 pl-1">
+            <div
+              class="w-9 h-9 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-label-md border-2 border-surface-container"
+            >
+              AM
+            </div>
+            <div class="hidden lg:flex flex-col text-left">
+              <span
+                class="text-label-md font-label-md font-semibold text-on-surface leading-tight"
+                >Dr. Ahmed Al-Mansoor, DPT</span
+              >
+              <span
+                class="text-label-sm font-label-sm text-on-surface-variant leading-none mt-0.5"
+                >Lead Physical Therapist</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Main Canvas: Focused Layout -->
+    <main
+      class="flex-1 max-w-[1280px] w-full mx-auto px-4 md:px-8 lg:px-10 py-6 md:py-8"
+    >
+      <!-- 1. Warm, Focused Clinician Greeting -->
+      <div
+        class="mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+      >
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <span
+              class="text-label-sm font-label-sm px-2 py-0.5 rounded-full bg-[#3FB2C0]/15 text-secondary font-semibold uppercase tracking-wider"
+              >Clinical Session Deck</span
+            >
+            <span class="text-label-sm font-label-sm text-outline"
+              >Thursday, October 24</span
+            >
+          </div>
+          <h1
+            class="text-headline-md md:text-headline-lg font-headline-md md:font-headline-lg text-primary tracking-tight"
+          >
+            Good morning, Dr. Ahmed
+          </h1>
+          <p class="text-body-md font-body-md text-on-surface-variant mt-0.5">
+            Here is your operational patient overview and treatment schedule for
+            today.
+          </p>
+        </div>
+        <div class="flex items-center gap-3 self-start md:self-auto">
+          <button
+            class="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-container-lowest thin-border text-primary text-label-md font-label-md hover:bg-surface-container-low transition-colors duration-150 elevation-level-1"
+          >
+            <span class="material-symbols-outlined text-[18px]"
+              >event_repeat</span
+            >
+            <span>Room 3 (Kinesio Suite)</span>
+          </button>
+        </div>
+      </div>
+      <!-- 2. Operational Glanceable Summary (No revenue charts, pure workflow) -->
+      <section class="grid grid-cols-2 lg:grid-cols-4 gap-3.5 mb-8">
+        <!-- Card: Patients Today -->
+        <div
+          class="bg-surface-container-lowest p-4 rounded-xl thin-border elevation-level-1 flex items-center justify-between"
+        >
+          <div>
+            <span
+              class="text-label-sm font-label-sm text-outline uppercase tracking-wider block"
+              >Patients Today</span
+            >
+            <span
+              class="text-headline-md font-headline-md text-on-surface mt-1 block"
+              >6 Booked</span
+            >
+            <span class="text-label-sm font-label-sm text-secondary font-medium"
+              >1 Open Rehabilitation Slot</span
+            >
+          </div>
+          <div
+            class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary"
+          >
+            <span class="material-symbols-outlined">group</span>
+          </div>
+        </div>
+        <!-- Card: Previous Patient -->
+        <div
+          class="bg-surface-container-lowest p-4 rounded-xl thin-border elevation-level-1 flex items-center justify-between"
+        >
+          <div>
+            <span
+              class="text-label-sm font-label-sm text-outline uppercase tracking-wider block"
+              >Previous Patient</span
+            >
+            <span
+              class="text-title-md font-title-md text-on-surface mt-1 block truncate max-w-[140px]"
+              >Mohamed Ali</span
+            >
+            <div class="flex items-center gap-1.5 mt-0.5">
+              <span class="w-2 h-2 rounded-full bg-primary/40"></span>
+              <span class="text-label-sm font-label-sm text-on-surface-variant"
+                >10:00 AM • Completed</span
+              >
+            </div>
+          </div>
+          <div
+            class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary"
+          >
+            <span class="material-symbols-outlined">check_circle</span>
+          </div>
+        </div>
+        <!-- Card: Current Patient (Highlighted) -->
+        <div
+          class="bg-surface-container-lowest p-4 rounded-xl border border-secondary/40 elevation-level-2 flex items-center justify-between ring-1 ring-secondary/20"
+        >
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span
+                class="w-2 h-2 rounded-full bg-secondary animate-pulse"
+              ></span>
+              <span
+                class="text-label-sm font-label-sm text-secondary font-semibold uppercase tracking-wider block"
+                >Current Patient</span
+              >
+            </div>
+            <span
+              class="text-title-md font-title-md text-primary font-bold mt-1 block truncate max-w-[140px]"
+              >Omar Adel</span
+            >
+            <span class="text-label-sm font-label-sm text-on-surface-variant"
+              >11:00 AM • Session 5 of 12</span
+            >
+          </div>
+          <div
+            class="w-10 h-10 rounded-xl bg-[#3FB2C0]/15 flex items-center justify-center text-secondary"
+          >
+            <span class="material-symbols-outlined">person_pin</span>
+          </div>
+        </div>
+        <!-- Card: Next Patient -->
+        <div
+          class="bg-surface-container-lowest p-4 rounded-xl thin-border elevation-level-1 flex items-center justify-between"
+        >
+          <div>
+            <span
+              class="text-label-sm font-label-sm text-outline uppercase tracking-wider block"
+              >Next Patient</span
+            >
+            <span
+              class="text-title-md font-title-md text-on-surface mt-1 block truncate max-w-[140px]"
+              >Sara Ahmed</span
+            >
+            <div class="flex items-center gap-1.5 mt-0.5">
+              <span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+              <span class="text-label-sm font-label-sm text-on-surface-variant"
+                >12:00 PM • Pending</span
+              >
+            </div>
+          </div>
+          <div
+            class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-on-surface-variant"
+          >
+            <span class="material-symbols-outlined">pending_actions</span>
+          </div>
+        </div>
+      </section>
+      <!-- 3. Prominent Current Patient Banner Card -->
+      <section class="mb-8">
+        <div
+          class="bg-surface-container-lowest rounded-2xl p-6 lg:p-7 thin-border elevation-level-2 border-l-4 border-l-secondary relative overflow-hidden"
+        >
+          <div
+            class="flex flex-col lg:flex-row lg:items-center justify-between gap-6"
+          >
+            <!-- Left: Identity & Case -->
+            <div class="space-y-2">
+              <div class="flex flex-wrap items-center gap-2.5">
+                <span
+                  class="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-semibold bg-[rgba(63,178,192,0.12)] text-[#2B7D87] flex items-center gap-1"
+                >
+                  <span class="material-symbols-outlined text-[14px]"
+                    >door_front</span
+                  >
+                  In Clinic / Pending
+                </span>
+                <span class="text-label-md font-label-md text-outline"
+                  >MRN #PT-9042</span
+                >
+                <span class="text-outline-variant">•</span>
+                <span class="text-label-md font-label-md text-outline"
+                  >Age: 32</span
+                >
+                <span class="text-outline-variant">•</span>
+                <span
+                  class="text-label-md font-label-md font-medium text-secondary"
+                  >Starting in 10 minutes</span
+                >
+              </div>
+              <div class="flex items-baseline gap-3">
+                <h2 class="text-headline-md font-headline-md text-primary">
+                  Omar Adel
+                </h2>
+                <span class="text-body-md font-body-md text-on-surface-variant"
+                  >11:00 AM – 11:45 AM (45 min)</span
+                >
+              </div>
+              <p
+                class="text-body-md font-body-md text-on-surface-variant flex items-center gap-2"
+              >
+                <span
+                  class="material-symbols-outlined text-secondary text-[18px]"
+                  >healing</span
+                >
+                <span class="font-medium text-on-surface">Treatment:</span>
+                Post-Op Knee Arthroscopy &amp; ACL Rehabilitation
+                <span class="text-outline-variant">|</span>
+                <span class="font-medium text-secondary">Session 5 of 12</span>
+                (Active Treatment Plan)
+              </p>
+            </div>
+            <!-- Right: Direct Clinical Call-to-Actions -->
+            <div class="flex flex-wrap items-center gap-3">
+              <button
+                class="px-5 py-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-primary font-label-lg text-label-lg thin-border transition-all duration-150 flex items-center gap-2"
+                onclick="
+                  document
+                    .getElementById('session-report-panel')
+                    .scrollIntoView({ behavior: 'smooth' })
+                "
+              >
+                <span class="material-symbols-outlined text-[18px]"
+                  >clinical_notes</span
+                >
+                <span>Open Patient</span>
+              </button>
+              <button
+                class="px-5 py-2.5 rounded-xl bg-primary-container hover:bg-[#2E537B] text-on-primary font-label-lg text-label-lg transition-all duration-150 flex items-center gap-2 elevation-level-1 hover:scale-[0.98]"
+              >
+                <span class="material-symbols-outlined text-[18px]"
+                  >play_arrow</span
+                >
+                <span>Start Session</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Operational Core: 2-Column Bento (Timeline on Left, Clinical Form on Right) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- 4. Today's Schedule Timeline (5 Columns) -->
+        <section
+          class="lg:col-span-5 bg-surface-container-lowest rounded-2xl p-5 md:p-6 thin-border elevation-level-1"
+        >
+          <div
+            class="flex items-center justify-between mb-5 pb-3 border-b border-outline-variant/20"
+          >
+            <div>
+              <h3 class="text-title-lg font-title-lg text-primary">
+                Today's Schedule
+              </h3>
+              <p class="text-label-sm font-label-sm text-on-surface-variant">
+                Chronological treatment appointments
+              </p>
+            </div>
+            <span
+              class="text-label-sm font-label-sm px-2 py-1 rounded-md bg-surface-container font-medium text-primary"
+            >
+              6 Total Slots
+            </span>
+          </div>
+          <!-- Strict Timeline Entries -->
+          <div class="space-y-3 relative">
+            <!-- Timeline Item 1: 09:00 AM -->
+            <div
+              class="p-3.5 rounded-xl thin-border bg-surface-container-lowest hover:bg-surface-container-low/40 transition-colors"
+            >
+              <div class="flex items-start justify-between gap-3">
+                <div class="flex items-start gap-3">
+                  <span
+                    class="text-label-md font-label-md font-bold text-outline mt-0.5 w-16"
+                    >09:00 AM</span
+                  >
+                  <div>
+                    <h4
+                      class="text-label-lg font-label-lg text-on-surface font-semibold"
+                    >
+                      Ahmed Hassan
+                    </h4>
+                    <p
+                      class="text-label-sm font-label-sm text-on-surface-variant mt-0.5"
+                    >
+                      Cervical Spine Decompression
+                    </p>
+                  </div>
+                </div>
+                <!-- Status Chip -->
+                <span
+                  class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-[rgba(57,101,150,0.10)] text-[#396596] font-medium flex items-center gap-1 shrink-0"
+                >
+                  <span class="material-symbols-outlined text-[12px]"
+                    >check</span
+                  >
+                  Completed
+                </span>
+              </div>
+              <div
+                class="mt-2.5 pt-2 border-t border-outline-variant/15 flex justify-end gap-3 text-label-sm font-label-sm"
+              >
+                <a
+                  class="text-primary hover:underline flex items-center gap-1"
+                  href="#record"
+                >
+                  <span class="material-symbols-outlined text-[14px]"
+                    >visibility</span
+                  >
+                  View Record
+                </a>
+                <a
+                  class="text-on-surface-variant hover:text-primary flex items-center gap-1"
+                  href="#report"
+                >
+                  <span class="material-symbols-outlined text-[14px]"
+                    >description</span
+                  >
+                  Session Report
+                </a>
+              </div>
+            </div>
+            <!-- Timeline Item 2: 10:00 AM -->
+            <div
+              class="p-3.5 rounded-xl thin-border bg-surface-container-lowest hover:bg-surface-container-low/40 transition-colors"
+            >
+              <div class="flex items-start justify-between gap-3">
+                <div class="flex items-start gap-3">
+                  <span
+                    class="text-label-md font-label-md font-bold text-outline mt-0.5 w-16"
+                    >10:00 AM</span
+                  >
+                  <div>
+                    <h4
+                      class="text-label-lg font-label-lg text-on-surface font-semibold"
+                    >
+                      Mohamed Ali
+                    </h4>
+                    <p
+                      class="text-label-sm font-label-sm text-on-surface-variant mt-0.5"
+                    >
+                      Shoulder Impingement Therapy
+                    </p>
+                  </div>
+                </div>
+                <span
+                  class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-[rgba(57,101,150,0.10)] text-[#396596] font-medium flex items-center gap-1 shrink-0"
+                >
+                  <span class="material-symbols-outlined text-[12px]"
+                    >check</span
+                  >
+                  Completed
+                </span>
+              </div>
+              <div
+                class="mt-2.5 pt-2 border-t border-outline-variant/15 flex justify-end gap-3 text-label-sm font-label-sm"
+              >
+                <a
+                  class="text-primary hover:underline flex items-center gap-1"
+                  href="#record"
+                >
+                  <span class="material-symbols-outlined text-[14px]"
+                    >visibility</span
+                  >
+                  View Record
+                </a>
+                <a
+                  class="text-on-surface-variant hover:text-primary flex items-center gap-1"
+                  href="#report"
+                >
+                  <span class="material-symbols-outlined text-[14px]"
+                    >description</span
+                  >
+                  Session Report
+                </a>
+              </div>
+            </div>
+            <!-- Timeline Item 3: 11:00 AM (Current active focus) -->
+            <div
+              class="p-3.5 rounded-xl border-2 border-secondary bg-surface-container-lowest ring-2 ring-secondary/15"
+            >
+              <div class="flex items-start justify-between gap-3">
+                <div class="flex items-start gap-3">
+                  <span
+                    class="text-label-md font-label-md font-bold text-secondary mt-0.5 w-16"
+                    >11:00 AM</span
+                  >
+                  <div>
+                    <div class="flex items-center gap-2">
+                      <h4
+                        class="text-label-lg font-label-lg text-primary font-bold"
+                      >
+                        Omar Adel
+                      </h4>
+                      <span
+                        class="text-label-sm font-label-sm text-secondary font-semibold"
+                        >(Current)</span
+                      >
+                    </div>
+                    <p
+                      class="text-label-sm font-label-sm text-on-surface-variant mt-0.5"
+                    >
+                      Post-Op ACL Recovery (Session 5 of 12)
+                    </p>
+                  </div>
+                </div>
+                <span
+                  class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-[rgba(63,178,192,0.15)] text-[#006973] font-bold flex items-center gap-1 shrink-0"
+                >
+                  <span class="material-symbols-outlined text-[12px]"
+                    >schedule</span
+                  >
+                  Pending
+                </span>
+              </div>
+              <div
+                class="mt-2.5 pt-2 border-t border-outline-variant/20 flex justify-between items-center text-label-sm font-label-sm"
+              >
+                <span class="text-outline text-label-sm"
+                  >In consultation area</span
+                >
+                <div class="flex gap-2">
+                  <button
+                    class="px-2 py-1 rounded bg-secondary/10 hover:bg-secondary/20 text-secondary font-medium flex items-center gap-1"
+                  >
+                    <span class="material-symbols-outlined text-[14px]"
+                      >edit_note</span
+                    >
+                    Session Report
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Timeline Item 4: 12:00 PM -->
+            <div
+              class="p-3.5 rounded-xl thin-border bg-surface-container-lowest hover:bg-surface-container-low/40 transition-colors"
+            >
+              <div class="flex items-start justify-between gap-3">
+                <div class="flex items-start gap-3">
+                  <span
+                    class="text-label-md font-label-md font-bold text-outline mt-0.5 w-16"
+                    >12:00 PM</span
+                  >
+                  <div>
+                    <h4
+                      class="text-label-lg font-label-lg text-on-surface font-semibold"
+                    >
+                      Sara Ahmed
+                    </h4>
+                    <p
+                      class="text-label-sm font-label-sm text-on-surface-variant mt-0.5"
+                    >
+                      Lumbar Spine Mobility &amp; Core Stabilization
+                    </p>
+                  </div>
+                </div>
+                <span
+                  class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-surface-container text-on-surface-variant font-medium flex items-center gap-1 shrink-0"
+                >
+                  <span class="material-symbols-outlined text-[12px]"
+                    >timer</span
+                  >
+                  Pending
+                </span>
+              </div>
+              <div
+                class="mt-2.5 pt-2 border-t border-outline-variant/15 flex justify-end gap-3 text-label-sm font-label-sm"
+              >
+                <a
+                  class="text-primary hover:underline flex items-center gap-1"
+                  href="#record"
+                >
+                  <span class="material-symbols-outlined text-[14px]"
+                    >visibility</span
+                  >
+                  View Record
+                </a>
+                <a
+                  class="text-on-surface-variant hover:text-primary flex items-center gap-1"
+                  href="#report"
+                >
+                  <span class="material-symbols-outlined text-[14px]"
+                    >description</span
+                  >
+                  Session Report
+                </a>
+              </div>
+            </div>
+            <!-- Timeline Item 5: 01:00 PM (Open Slot) -->
+            <div
+              class="p-3.5 rounded-xl border border-dashed border-outline-variant/60 bg-[#F0F8F9]/70 flex items-center justify-between"
+            >
+              <div class="flex items-center gap-3">
+                <span
+                  class="text-label-md font-label-md font-medium text-outline w-16"
+                  >01:00 PM</span
+                >
+                <div>
+                  <h4
+                    class="text-label-md font-label-md text-secondary font-medium flex items-center gap-1.5"
+                  >
+                    <span class="material-symbols-outlined text-[16px]"
+                      >add_circle_outline</span
+                    >
+                    Open Slot
+                  </h4>
+                  <p class="text-label-sm font-label-sm text-outline">
+                    Available for Walk-in or Urgent Re-assessment
+                  </p>
+                </div>
+              </div>
+              <button
+                class="px-2.5 py-1 text-label-sm font-label-sm rounded-lg bg-surface-container-lowest text-primary thin-border hover:bg-surface-container-high transition-colors"
+              >
+                Assign
+              </button>
+            </div>
+            <!-- Timeline Item 6: 02:00 PM (Cancelled) -->
+            <div
+              class="p-3.5 rounded-xl thin-border bg-surface-container-lowest/60 opacity-80 hover:opacity-100 transition-opacity"
+            >
+              <div class="flex items-start justify-between gap-3">
+                <div class="flex items-start gap-3">
+                  <span
+                    class="text-label-md font-label-md font-medium text-outline-variant mt-0.5 w-16"
+                    >02:00 PM</span
+                  >
+                  <div>
+                    <h4
+                      class="text-label-lg font-label-lg text-outline font-medium line-through"
+                    >
+                      Khalid Fahad
+                    </h4>
+                    <p class="text-label-sm font-label-sm text-outline mt-0.5">
+                      Sports Hamstring Strain
+                    </p>
+                  </div>
+                </div>
+                <span
+                  class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-error-container text-on-error-container font-medium flex items-center gap-1 shrink-0"
+                >
+                  <span class="material-symbols-outlined text-[12px]"
+                    >cancel</span
+                  >
+                  Cancelled
+                </span>
+              </div>
+              <div
+                class="mt-2 pt-2 border-t border-outline-variant/15 flex justify-between items-center text-label-sm font-label-sm"
+              >
+                <span class="text-label-sm text-outline"
+                  >Cancelled by patient via portal</span
+                >
+                <a
+                  class="text-outline hover:text-on-surface flex items-center gap-1"
+                  href="#history"
+                >
+                  View History
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 5. Active Patient Details & Session Report Dedicated Section (7 Columns) -->
+        <section
+          class="lg:col-span-7 bg-surface-container-lowest rounded-2xl p-6 md:p-7 thin-border elevation-level-1"
+          id="session-report-panel"
+        >
+          <!-- Header: Patient Identity & Status Differentiation -->
+          <div class="pb-5 border-b border-outline-variant/25">
+            <div class="flex flex-wrap items-start justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-2">
+                  <h3 class="text-headline-md font-headline-md text-primary">
+                    Omar Adel
+                  </h3>
+                  <span
+                    class="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-[rgba(63,178,192,0.12)] text-[#2B7D87] font-semibold"
+                  >
+                    Appointment: Pending
+                  </span>
+                  <span
+                    class="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-surface-container text-primary font-semibold"
+                  >
+                    Plan: Active
+                  </span>
+                </div>
+                <p
+                  class="text-body-md font-body-md text-on-surface-variant mt-1"
+                >
+                  Age: 32 &nbsp;|&nbsp; Phone:
+                  <span class="font-medium text-on-surface"
+                    >+966 50 123 4567</span
+                  >
+                  &nbsp;|&nbsp; ID: PT-9042
+                </p>
+              </div>
+              <div class="text-right">
+                <div
+                  class="text-label-sm font-label-sm text-outline uppercase tracking-wider"
+                >
+                  Plan Trajectory
+                </div>
+                <div
+                  class="text-label-lg font-label-lg font-bold text-secondary"
+                >
+                  Session 5 of 12
+                </div>
+                <div
+                  class="text-label-sm font-label-sm text-on-surface-variant"
+                >
+                  4 Completed • 7 Remaining
+                </div>
+              </div>
+            </div>
+            <!-- Progress Bar for Treatment Plan -->
+            <div
+              class="w-full bg-surface-container rounded-full h-2 mt-4 overflow-hidden"
+            >
+              <div
+                class="bg-secondary h-2 rounded-full transition-all duration-300"
+                style="width: 41.6%"
+              ></div>
+            </div>
+          </div>
+          <!-- Clinical Diagnosis Context Blocks -->
+          <div class="my-5 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Initial Diagnosis (Intake) -->
+            <div
+              class="p-3.5 rounded-xl bg-surface-container-low/60 thin-border"
+            >
+              <span
+                class="text-label-sm font-label-sm text-outline uppercase tracking-wider block mb-1"
+              >
+                Initial Diagnosis (Intake)
+              </span>
+              <p class="text-body-md font-body-md text-on-surface leading-snug">
+                Acute Right ACL Partial Tear with Joint Effusion (Entered at
+                intake)
+              </p>
+            </div>
+            <!-- Current Working Diagnosis (Editable by therapist) -->
+            <div
+              class="p-3.5 rounded-xl bg-surface-container-lowest border border-[#3FB2C0]/50 relative"
+            >
+              <div class="flex items-center justify-between mb-1">
+                <span
+                  class="text-label-sm font-label-sm text-secondary font-semibold uppercase tracking-wider block"
+                >
+                  Current Working Diagnosis
+                </span>
+                <button
+                  class="text-label-sm font-label-sm text-primary hover:underline flex items-center gap-1"
+                >
+                  <span class="material-symbols-outlined text-[14px]"
+                    >edit</span
+                  >
+                  Edit Diagnosis
+                </button>
+              </div>
+              <p
+                class="text-body-md font-body-md text-on-surface font-medium leading-snug"
+              >
+                Post-Reconstruction Phase 2: Patellar mobility &amp; Quad
+                Activation
+              </p>
+            </div>
+          </div>
+          <!-- Structured Session Report Entry Form -->
+          <form class="space-y-4 pt-2" onsubmit="event.preventDefault()">
+            <div class="flex items-center justify-between">
+              <h4
+                class="text-title-md font-title-md text-primary flex items-center gap-2"
+              >
+                <span class="material-symbols-outlined text-secondary"
+                  >assignment</span
+                >
+                Session Report Form (Today's Entry)
+              </h4>
+              <span class="text-label-sm font-label-sm text-outline"
+                >Session #5</span
+              >
+            </div>
+            <!-- Assessment -->
+            <div>
+              <label
+                class="block text-label-md font-label-md font-semibold text-on-surface mb-1.5"
+              >
+                1. Assessment &amp; Joint Condition
+              </label>
+              <input
+                class="w-full bg-surface-container-lowest border border-[#CFE6E8] focus:border-[#3FB2C0] focus:ring-2 focus:ring-[#3FB2C0]/20 rounded-lg text-body-md font-body-md text-on-surface py-2.5 px-3.5 transition-colors"
+                type="text"
+                value="Joint mobility improved, trace swelling around suprapatellar pouch"
+              />
+            </div>
+            <!-- Treatment Performed -->
+            <div>
+              <label
+                class="block text-label-md font-label-md font-semibold text-on-surface mb-1.5"
+              >
+                2. Treatment Performed
+              </label>
+              <textarea
+                class="w-full bg-surface-container-lowest border border-[#CFE6E8] focus:border-[#3FB2C0] focus:ring-2 focus:ring-[#3FB2C0]/20 rounded-lg text-body-md font-body-md text-on-surface py-2.5 px-3.5 transition-colors"
+                rows="2"
+              >
+Manual patellar mobilization, isometric quad sets, neuromuscular re-education with biofeedback</textarea
+              >
+            </div>
+            <!-- Dual Column: Pain Level & Mobility Progress -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- Patient Response & Pain Level -->
+              <div
+                class="p-3.5 rounded-xl bg-surface-container-low/40 thin-border"
+              >
+                <div class="flex justify-between items-center mb-1">
+                  <label
+                    class="text-label-md font-label-md font-semibold text-on-surface"
+                  >
+                    3. Pain Level (VAS)
+                  </label>
+                  <span
+                    class="text-label-md font-label-md font-bold text-secondary"
+                    >3 / 10</span
+                  >
+                </div>
+                <p class="text-label-sm font-label-sm text-outline mb-2">
+                  Improved from 6/10 at intake
+                </p>
+                <!-- Pain Slider Component -->
+                <input
+                  class="w-full accent-secondary h-2 bg-surface-container-highest rounded-lg cursor-pointer"
+                  max="10"
+                  min="0"
+                  type="range"
+                  value="3"
+                />
+                <div
+                  class="flex justify-between text-label-sm font-label-sm text-outline mt-1"
+                >
+                  <span>0 (No Pain)</span>
+                  <span>5 (Moderate)</span>
+                  <span>10 (Severe)</span>
+                </div>
+              </div>
+              <!-- Mobility Progress -->
+              <div
+                class="p-3.5 rounded-xl bg-surface-container-low/40 thin-border"
+              >
+                <label
+                  class="block text-label-md font-label-md font-semibold text-on-surface mb-1"
+                >
+                  4. Mobility &amp; ROM Progress
+                </label>
+                <p class="text-label-sm font-label-sm text-outline mb-2">
+                  Goniometer Range of Motion
+                </p>
+                <div class="flex items-center gap-2">
+                  <input
+                    class="flex-1 bg-surface-container-lowest border border-[#CFE6E8] focus:border-[#3FB2C0] rounded-lg text-body-md font-body-md text-on-surface py-1.5 px-3"
+                    type="text"
+                    value="Knee flexion reaching 112°"
+                  />
+                  <span
+                    class="px-2.5 py-1.5 rounded-lg bg-surface-container text-label-sm font-label-sm font-semibold text-secondary"
+                  >
+                    +8° Gain
+                  </span>
+                </div>
+              </div>
+            </div>
+            <!-- Assigned Exercises -->
+            <div>
+              <label
+                class="block text-label-md font-label-md font-semibold text-on-surface mb-1.5"
+              >
+                5. Home Exercises Assigned (HEP)
+              </label>
+              <input
+                class="w-full bg-surface-container-lowest border border-[#CFE6E8] focus:border-[#3FB2C0] focus:ring-2 focus:ring-[#3FB2C0]/20 rounded-lg text-body-md font-body-md text-on-surface py-2.5 px-3.5 transition-colors"
+                type="text"
+                value="Heel slides (3x10), straight leg raises with light green resistance band"
+              />
+            </div>
+            <!-- Next Session Focus -->
+            <div>
+              <label
+                class="block text-label-md font-label-md font-semibold text-on-surface mb-1.5"
+              >
+                6. Next Session Focus &amp; Goals
+              </label>
+              <input
+                class="w-full bg-surface-container-lowest border border-[#CFE6E8] focus:border-[#3FB2C0] focus:ring-2 focus:ring-[#3FB2C0]/20 rounded-lg text-body-md font-body-md text-on-surface py-2.5 px-3.5 transition-colors"
+                type="text"
+                value="Eccentric hamstring loading and single-leg balance board stability"
+              />
+            </div>
+            <!-- Action Footer: Distinct Workflow Controls -->
+            <div
+              class="pt-5 mt-6 border-t border-outline-variant/25 flex flex-col sm:flex-row items-center justify-between gap-4"
+            >
+              <!-- Left secondary/danger actions -->
+              <div class="flex items-center gap-2 w-full sm:w-auto">
+                <button
+                  class="px-3 py-2 rounded-xl text-error hover:bg-error-container/30 text-label-md font-label-md transition-colors duration-150 flex items-center gap-1"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined text-[16px]"
+                    >close</span
+                  >
+                  <span>Cancel Session</span>
+                </button>
+                <button
+                  class="px-3 py-2 rounded-xl text-outline hover:text-on-surface text-label-md font-label-md transition-colors duration-150"
+                  title="Available when session 12 concludes"
+                  type="button"
+                >
+                  Complete Treatment Plan
+                </button>
+              </div>
+              <!-- Right primary completion -->
+              <div class="flex items-center gap-3 w-full sm:w-auto justify-end">
+                <button
+                  class="px-4 py-2.5 rounded-xl bg-[#F8FBFC] border border-[#A8DADF] hover:bg-surface-container-lowest text-primary text-label-lg font-label-lg transition-colors duration-150"
+                  type="button"
+                >
+                  Save Draft
+                </button>
+                <button
+                  class="px-6 py-2.5 rounded-xl bg-primary-container hover:bg-[#2E537B] text-on-primary text-label-lg font-label-lg transition-all duration-150 flex items-center gap-2 elevation-level-1"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >task_alt</span
+                  >
+                  <span>Complete Session</span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+    <!-- Professional Minimal Clinician Footer -->
+    <footer
+      class="bg-surface-container-lowest border-t border-outline-variant/30 mt-12 py-5 px-6 lg:px-12"
+    >
+      <div
+        class="max-w-[1280px] mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 text-label-sm font-label-sm text-outline"
+      >
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-secondary"></span>
+          <span
+            >Etqan Physical Therapy Clinic • Internal Clinician Terminal</span
+          >
+        </div>
+        <div>
+          <span
+            >Authenticated: Dr. Ahmed Al-Mansoor (DPT, Specialist Lic.
+            #78901)</span
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

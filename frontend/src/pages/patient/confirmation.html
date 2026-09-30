@@ -1,0 +1,111 @@
+<!doctype html>
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>تم استلام طلب الحجز | عيادة إتقان</title>
+    <link href="../../output.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="min-h-screen bg-surface-page font-cairo text-neutral-900">
+    <header class="border-b border-neutral-200 bg-white">
+      <div
+        class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 md:px-8"
+      >
+        <a class="flex items-center gap-3" href="home.html"
+          ><span
+            class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-white"
+            ><span class="material-symbols-outlined text-2xl"
+              >accessibility_new</span
+            ></span
+          ><span
+            ><b class="block text-lg text-primary">عيادة إتقان</b
+            ><small class="text-xs text-neutral"
+              >للعلاج الطبيعي والتأهيل</small
+            ></span
+          ></a
+        ><a
+          class="text-sm font-bold text-neutral hover:text-primary"
+          href="home.html"
+          >الرئيسية</a
+        >
+      </div>
+    </header>
+    <main class="mx-auto flex max-w-3xl justify-center px-4 py-12 md:py-20">
+      <section class="card w-full overflow-hidden text-center">
+        <div class="h-1.5 bg-gradient-primary"></div>
+        <div class="px-6 py-9 sm:px-10">
+          <div
+            class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-success-50 text-success-600"
+          >
+            <span class="material-symbols-outlined text-5xl">check_circle</span>
+          </div>
+          <p class="mt-6 text-sm font-bold text-secondary">تم استلام طلبك</p>
+          <h1 class="mt-2 text-2xl font-extrabold text-primary sm:text-3xl">
+            حجزك قيد التأكيد
+          </h1>
+          <p class="mx-auto mt-3 max-w-xl text-sm leading-7 text-neutral">
+            سيتواصل معك فريق العيادة خلال وقت قصير لتأكيد الموعد. ستصلك رسالة
+            بالبيانات النهائية بعد المراجعة.
+          </p>
+          <div
+            class="my-8 rounded-card border border-primary-100 bg-primary-50 p-5 text-right"
+          >
+            <p class="text-sm font-bold text-primary">تفاصيل الموعد</p>
+            <dl class="mt-4 space-y-3 text-sm">
+              <div class="flex justify-between gap-4">
+                <dt class="text-neutral">الطبيب</dt>
+                <dd id="doctor" class="font-bold">د. أحمد منصور</dd>
+              </div>
+              <div class="flex justify-between gap-4">
+                <dt class="text-neutral">نوع الزيارة</dt>
+                <dd id="visit" class="font-bold">كشف وتقييم أولي</dd>
+              </div>
+              <div class="flex justify-between gap-4">
+                <dt class="text-neutral">الموعد المطلوب</dt>
+                <dd class="font-bold">
+                  <span id="day">السبت 4 أكتوبر</span>،
+                  <span id="time">5:30 م</span>
+                </dd>
+              </div>
+              <div class="flex justify-between gap-4">
+                <dt class="text-neutral">رقم الطلب</dt>
+                <dd id="reference" class="font-bold text-primary"></dd>
+              </div>
+            </dl>
+          </div>
+          <div
+            class="rounded-input bg-warning-50 p-4 text-right text-sm text-warning-600"
+          >
+            <span class="material-symbols-outlined ml-1 align-middle">info</span
+            >يرجى الحضور قبل الموعد بعشر دقائق وإحضار أي تقارير أو أشعات سابقة.
+          </div>
+          <div
+            class="mt-7 flex flex-col-reverse gap-3 sm:flex-row sm:justify-center"
+          >
+            <a class="btn-secondary" href="home.html">العودة للرئيسية</a
+            ><a class="btn-primary" href="booking.html">حجز موعد آخر</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      const params = new URLSearchParams(location.search);
+      [
+        ["doctor", "د. أحمد منصور"],
+        ["visit", "كشف وتقييم أولي"],
+        ["day", "السبت 4 أكتوبر"],
+        ["time", "5:30 م"],
+      ].forEach(
+        ([key, fallback]) =>
+          (document.getElementById(key).textContent =
+            params.get(key) || fallback),
+      );
+      document.getElementById("reference").textContent =
+        `ETQ-${String(Date.now()).slice(-6)}`;
+    </script>
+  </body>
+</html>

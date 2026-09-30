@@ -1,0 +1,250 @@
+<!doctype html>
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>حجز موعد | عيادة إتقان</title>
+    <link href="../../output.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="min-h-screen bg-surface-page font-cairo text-neutral-900">
+    <header
+      class="sticky top-0 z-50 border-b border-neutral-200 bg-white/95 shadow-sm"
+    >
+      <div
+        class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 md:px-8"
+      >
+        <a class="flex items-center gap-3" href="home.html"
+          ><span
+            class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-white"
+            ><span class="material-symbols-outlined text-2xl"
+              >accessibility_new</span
+            ></span
+          ><span
+            ><b class="block text-lg text-primary">عيادة إتقان</b
+            ><small class="text-xs text-neutral"
+              >للعلاج الطبيعي والتأهيل</small
+            ></span
+          ></a
+        >
+        <a
+          class="text-sm font-bold text-neutral hover:text-primary"
+          href="booking.html"
+          >العودة لاختيار الطبيب</a
+        >
+      </div>
+    </header>
+    <main class="mx-auto max-w-7xl px-4 py-8 md:px-8">
+      <div class="flex items-center gap-2 text-sm font-bold text-neutral">
+        <span
+          class="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-xs text-white"
+          >2</span
+        ><span>اختر الموعد</span><span class="h-px w-8 bg-neutral-300"></span
+        ><span>تأكيد الحجز</span>
+      </div>
+      <h1 class="mt-5 text-2xl font-extrabold text-primary sm:text-3xl">
+        اختر موعدك مع <span id="doctor-title">د. أحمد منصور</span>
+      </h1>
+      <p class="mt-2 text-sm text-neutral">
+        حدد نوع الزيارة والوقت المناسبين، ثم راجع التفاصيل قبل التأكيد.
+      </p>
+      <div class="mt-7 grid grid-cols-1 gap-7 lg:grid-cols-12">
+        <section class="space-y-6 lg:col-span-8">
+          <div class="card flex items-center gap-4 p-5">
+            <span
+              class="flex h-16 w-16 shrink-0 items-center justify-center rounded-card bg-primary-50 text-primary"
+              ><span class="material-symbols-outlined text-3xl"
+                >medical_services</span
+              ></span
+            >
+            <div>
+              <b id="doctor-name" class="text-primary">د. أحمد منصور</b>
+              <p id="doctor-specialty" class="text-sm text-neutral">
+                استشاري العلاج الطبيعي وتأهيل الإصابات الرياضية
+              </p>
+            </div>
+          </div>
+          <section class="card p-6">
+            <h2 class="text-lg font-extrabold text-primary">1. نوع الزيارة</h2>
+            <div class="mt-4 grid gap-3 sm:grid-cols-2">
+              <button
+                class="visit rounded-input border-2 border-primary bg-primary-50 p-4 text-right font-bold text-primary"
+                data-value="كشف وتقييم أولي"
+                type="button"
+              >
+                كشف وتقييم أولي<small
+                  class="mt-1 block font-normal text-neutral"
+                  >فحص الحالة ووضع خطة علاج</small
+                ></button
+              ><button
+                class="visit rounded-input border border-neutral-200 p-4 text-right font-bold"
+                data-value="جلسة متابعة وتأهيل"
+                type="button"
+              >
+                جلسة متابعة وتأهيل<small
+                  class="mt-1 block font-normal text-neutral"
+                  >متابعة ضمن الخطة العلاجية</small
+                >
+              </button>
+            </div>
+          </section>
+          <section class="card p-6">
+            <h2 class="text-lg font-extrabold text-primary">2. اليوم والوقت</h2>
+            <div class="mt-4 grid grid-cols-3 gap-2 sm:grid-cols-5">
+              <button
+                class="day rounded-input border-2 border-primary bg-primary-50 p-3 font-bold text-primary"
+                data-value="السبت 4 أكتوبر"
+                type="button"
+              >
+                السبت<br /><small>4 أكتوبر</small></button
+              ><button
+                class="day rounded-input border border-neutral-200 p-3"
+                data-value="الأحد 5 أكتوبر"
+                type="button"
+              >
+                الأحد<br /><small>5 أكتوبر</small></button
+              ><button
+                class="day rounded-input border border-neutral-200 p-3"
+                data-value="الاثنين 6 أكتوبر"
+                type="button"
+              >
+                الاثنين<br /><small>6 أكتوبر</small>
+              </button>
+            </div>
+            <div class="mt-5 grid grid-cols-3 gap-2">
+              <button
+                class="time rounded-input border border-neutral-200 py-3"
+                data-value="5:00 م"
+                type="button"
+              >
+                5:00 م</button
+              ><button
+                class="time rounded-input border-2 border-primary bg-primary py-3 font-bold text-white"
+                data-value="5:30 م"
+                type="button"
+              >
+                5:30 م</button
+              ><button
+                class="time rounded-input border border-neutral-200 py-3"
+                data-value="6:30 م"
+                type="button"
+              >
+                6:30 م
+              </button>
+            </div>
+          </section>
+        </section>
+        <aside class="card h-fit p-6 lg:sticky lg:top-24 lg:col-span-4">
+          <p class="font-bold text-secondary">ملخص الحجز</p>
+          <h2 class="text-xl font-extrabold text-primary">راجع تفاصيلك</h2>
+          <dl class="my-5 space-y-3 border-y border-neutral-100 py-5 text-sm">
+            <div class="flex justify-between gap-4">
+              <dt class="text-neutral">الطبيب</dt>
+              <dd id="summary-doctor" class="font-bold">د. أحمد منصور</dd>
+            </div>
+            <div class="flex justify-between gap-4">
+              <dt class="text-neutral">الزيارة</dt>
+              <dd id="visit-value" class="font-bold">كشف وتقييم أولي</dd>
+            </div>
+            <div class="flex justify-between gap-4">
+              <dt class="text-neutral">الموعد</dt>
+              <dd class="font-bold">
+                <span id="day-value">السبت 4 أكتوبر</span>،
+                <span id="time-value">5:30 م</span>
+              </dd>
+            </div>
+            <div class="flex justify-between gap-4">
+              <dt class="text-neutral">الفرع</dt>
+              <dd class="font-bold">فرع الدقي، الجيزة</dd>
+            </div>
+          </dl>
+          <button id="confirm" class="btn-primary w-full py-3.5" type="button">
+            تأكيد الحجز
+            <span class="material-symbols-outlined">arrow_back</span>
+          </button>
+          <p class="mt-3 text-center text-xs text-neutral">
+            لن يتم الدفع الآن. سيتواصل معك فريق العيادة للتأكيد.
+          </p>
+        </aside>
+      </div>
+    </main>
+    <script>
+      const doctors = {
+        "ahmed-mansour": [
+          "د. أحمد منصور",
+          "استشاري العلاج الطبيعي وتأهيل الإصابات الرياضية",
+        ],
+        "sara-mahmoud": [
+          "د. سارة محمود",
+          "أخصائية تأهيل العمود الفقري والمفاصل",
+        ],
+        "tarek-ezzat": [
+          "د. طارق عزت",
+          "أخصائي العلاج الطبيعي الرياضي وإصابات الملاعب",
+        ],
+        "mona-elshamy": [
+          "د. منى الشامي",
+          "أخصائية تأهيل العظام وما بعد الجراحات",
+        ],
+      };
+      const doctor =
+        doctors[new URLSearchParams(location.search).get("doctor")] ||
+        doctors["ahmed-mansour"];
+      ["doctor-title", "doctor-name", "summary-doctor"].forEach(
+        (id) => (document.getElementById(id).textContent = doctor[0]),
+      );
+      document.getElementById("doctor-specialty").textContent = doctor[1];
+      const state = {
+        visit: "كشف وتقييم أولي",
+        day: "السبت 4 أكتوبر",
+        time: "5:30 م",
+      };
+      const select = (selector, key, target, active) =>
+        document.querySelectorAll(selector).forEach((item) =>
+          item.addEventListener("click", () => {
+            document.querySelectorAll(selector).forEach((button) => {
+              button.classList.remove(
+                "border-2",
+                "border-primary",
+                "bg-primary-50",
+                "bg-primary",
+                "text-white",
+                "text-primary",
+              );
+            });
+            item.classList.add(...active);
+            state[key] = item.dataset.value;
+            document.querySelector(target).textContent = state[key];
+          }),
+        );
+      select(".visit", "visit", "#visit-value", [
+        "border-2",
+        "border-primary",
+        "bg-primary-50",
+        "text-primary",
+      ]);
+      select(".day", "day", "#day-value", [
+        "border-2",
+        "border-primary",
+        "bg-primary-50",
+        "text-primary",
+      ]);
+      select(".time", "time", "#time-value", [
+        "border-2",
+        "border-primary",
+        "bg-primary",
+        "text-white",
+      ]);
+      document
+        .getElementById("confirm")
+        .addEventListener(
+          "click",
+          () =>
+            (location.href = `confirmation.html?${new URLSearchParams({ doctor: doctor[0], visit: state.visit, day: state.day, time: state.time })}`),
+        );
+    </script>
+  </body>
+</html>

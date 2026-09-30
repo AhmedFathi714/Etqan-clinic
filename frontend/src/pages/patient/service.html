@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>خدمات العيادة والحالات — عيادة إتقان للعلاج الطبيعي والتأهيل</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Material Symbols Outlined -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                primary: "#396596",
+                "primary-hover": "#2d527c",
+                secondary: "#3FB2C0",
+                tertiary: "#A8DADF",
+                "tertiary-light": "#F0F8F9",
+                neutral: "#607274",
+                "neutral-dark": "#1e293b",
+                "neutral-light": "#F7F9FA",
+                "border-subtle": "#E2E8F0",
+              },
+            },
+            fontFamily: {
+              cairo: ["Cairo", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Cairo", sans-serif;
+        background-color: #f7f9fa;
+        color: #1e293b;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-brand-neutral-light min-h-screen text-slate-800 antialiased selection:bg-brand-tertiary selection:text-brand-primary"
+  >
+    <!-- Navbar Component -->
+    <header
+      class="bg-white border-b border-outline sticky top-0 z-50 shadow-sm transition-all duration-200"
+    >
+      <div
+        class="flex items-center justify-between w-full max-w-7xl mx-auto px-4 md:px-8 py-3.5"
+      >
+        <!-- Brand Logo -->
+        <a class="flex items-center gap-3 group" href="#">
+          <div
+            class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-sm group-hover:bg-primary-dark transition-colors"
+          >
+            <span
+              class="material-symbols-outlined text-2xl"
+              data-icon="accessibility_new"
+              >accessibility_new</span
+            >
+          </div>
+          <div class="flex flex-col">
+            <span
+              class="text-lg font-bold text-primary tracking-tight leading-tight"
+              >عيادة إتقان</span
+            >
+            <span class="text-xs text-neutral">للعلاج الطبيعي والتأهيل</span>
+          </div>
+        </a>
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a
+            class="text-primary font-bold border-b-2 border-primary pb-1 text-sm tracking-wide"
+            href="#"
+            >الرئيسية</a
+          >
+          <a
+            class="text-neutral hover:text-primary font-medium transition-colors text-sm"
+            href="#services"
+            >الخدمات</a
+          >
+          <a
+            class="text-neutral hover:text-primary font-medium transition-colors text-sm"
+            href="#conditions"
+            >الحالات</a
+          >
+          <a
+            class="text-neutral hover:text-primary font-medium transition-colors text-sm"
+            href="#doctors"
+            >الأطباء</a
+          >
+          <a
+            class="text-neutral hover:text-primary font-medium transition-colors text-sm"
+            href="#contact"
+            >تواصل معنا</a
+          >
+        </nav>
+        <!-- Action Cluster -->
+        <div class="flex items-center gap-3">
+          <a
+            class="hidden sm:inline-flex text-sm font-semibold text-neutral hover:text-primary px-3 py-2 rounded-lg hover:bg-neutral-light transition-all"
+            href="#contact-form"
+          >
+            تسجيل الدخول
+          </a>
+          <a
+            class="inline-flex items-center justify-center bg-primary text-white font-bold px-4 md:px-5 py-2.5 rounded-lg hover:bg-primary-dark transition-all shadow-sm active:scale-95 text-sm gap-1.5"
+            href="#contact-form"
+          >
+            <span class="">احجز موعد</span>
+            <span
+              class="material-symbols-outlined text-lg"
+              data-icon="calendar_month"
+              >calendar_month</span
+            >
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Breadcrumb / Navigation Context -->
+    <div class="bg-white border-b border-brand-border-subtle py-3">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav
+          class="flex items-center gap-2 text-xs font-medium text-brand-neutral"
+        >
+          <a href="#" class="hover:text-brand-primary transition-colors"
+            >الرئيسية</a
+          >
+          <span class="material-symbols-outlined text-xs">chevron_left</span>
+          <span class="text-brand-primary font-semibold"
+            >خدمات العيادة والحالات</span
+          >
+        </nav>
+      </div>
+    </div>
+
+    <main>
+      <!-- ================================================== -->
+      <!-- SECTION 1: خدمات العيادة (Clinic Services) -->
+      <!-- ================================================== -->
+      <section
+        id="services-section"
+        class="py-16 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
+        <!-- Section Header -->
+        <div class="text-center max-w-2xl mx-auto mb-12 md:mb-14">
+          <span
+            class="inline-block px-3.5 py-1 rounded-full text-xs font-semibold bg-brand-tertiary/25 text-brand-primary mb-3"
+          >
+            خدماتنا
+          </span>
+          <h1
+            class="text-3xl md:text-4xl font-bold text-brand-primary tracking-tight mb-3"
+          >
+            خدمات العيادة
+          </h1>
+          <p class="text-base text-brand-neutral leading-relaxed">
+            خدمات علاج طبيعي وتأهيل مصممة حسب حالتك ومرحلة التعافي.
+          </p>
+        </div>
+
+        <!-- 6 Service Cards Grid (3 Columns on Desktop) -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12"
+        >
+          <!-- Service 1: جلسة تقييم -->
+          <div
+            class="bg-white rounded-2xl p-7 border border-brand-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between group"
+          >
+            <div>
+              <div
+                class="w-13 h-13 w-12 h-12 rounded-xl bg-brand-tertiary/30 text-brand-primary flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-200"
+              >
+                <span class="material-symbols-outlined text-2xl"
+                  >clinical_notes</span
+                >
+              </div>
+              <h3 class="text-xl font-bold text-slate-800 mb-2">جلسة تقييم</h3>
+              <p class="text-sm text-brand-neutral leading-relaxed mb-6">
+                تقييم الحركة والحالة وتحديد خطة العلاج المناسبة.
+              </p>
+            </div>
+            <div>
+              <a
+                href="#"
+                class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary hover:text-brand-secondary group-hover:translate-x-[-2px] transition-all"
+              >
+                <span>اعرف المزيد</span>
+                <span class="material-symbols-outlined text-base"
+                  >arrow_left</span
+                >
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 2: جلسات العلاج الطبيعي -->
+          <div
+            class="bg-white rounded-2xl p-7 border border-brand-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between group"
+          >
+            <div>
+              <div
+                class="w-12 h-12 rounded-xl bg-brand-tertiary/30 text-brand-primary flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-200"
+              >
+                <span class="material-symbols-outlined text-2xl"
+                  >accessibility_new</span
+                >
+              </div>
+              <h3 class="text-xl font-bold text-slate-800 mb-2">
+                جلسات العلاج الطبيعي
+              </h3>
+              <p class="text-sm text-brand-neutral leading-relaxed mb-6">
+                جلسات علاج فردية ضمن خطة علاج تناسب حالتك.
+              </p>
+            </div>
+            <div>
+              <a
+                href="#"
+                class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary hover:text-brand-secondary group-hover:translate-x-[-2px] transition-all"
+              >
+                <span>اعرف المزيد</span>
+                <span class="material-symbols-outlined text-base"
+                  >arrow_left</span
+                >
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 3: التأهيل بعد العمليات -->
+          <div
+            class="bg-white rounded-2xl p-7 border border-brand-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between group"
+          >
+            <div>
+              <div
+                class="w-12 h-12 rounded-xl bg-brand-tertiary/30 text-brand-secondary flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-200"
+              >
+                <span class="material-symbols-outlined text-2xl">healing</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-800 mb-2">
+                التأهيل بعد العمليات
+              </h3>
+              <p class="text-sm text-brand-neutral leading-relaxed mb-6">
+                برنامج تدريجي لاستعادة الحركة والقوة بعد الجراحة.
+              </p>
+            </div>
+            <div>
+              <a
+                href="#"
+                class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary hover:text-brand-secondary group-hover:translate-x-[-2px] transition-all"
+              >
+                <span>اعرف المزيد</span>
+                <span class="material-symbols-outlined text-base"
+                  >arrow_left</span
+                >
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 4: تأهيل الإصابات الرياضية -->
+          <div
+            class="bg-white rounded-2xl p-7 border border-brand-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between group"
+          >
+            <div>
+              <div
+                class="w-12 h-12 rounded-xl bg-brand-tertiary/30 text-brand-primary flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-200"
+              >
+                <span class="material-symbols-outlined text-2xl"
+                  >sports_gymnastics</span
+                >
+              </div>
+              <h3 class="text-xl font-bold text-slate-800 mb-2">
+                تأهيل الإصابات الرياضية
+              </h3>
+              <p class="text-sm text-brand-neutral leading-relaxed mb-6">
+                خطة تساعدك على العودة للحركة والرياضة بشكل آمن.
+              </p>
+            </div>
+            <div>
+              <a
+                href="#"
+                class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary hover:text-brand-secondary group-hover:translate-x-[-2px] transition-all"
+              >
+                <span>اعرف المزيد</span>
+                <span class="material-symbols-outlined text-base"
+                  >arrow_left</span
+                >
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 5: العلاج اليدوي -->
+          <div
+            class="bg-white rounded-2xl p-7 border border-brand-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between group"
+          >
+            <div>
+              <div
+                class="w-12 h-12 rounded-xl bg-brand-tertiary/30 text-brand-secondary flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-200"
+              >
+                <span class="material-symbols-outlined text-2xl"
+                  >back_hand</span
+                >
+              </div>
+              <h3 class="text-xl font-bold text-slate-800 mb-2">
+                العلاج اليدوي
+              </h3>
+              <p class="text-sm text-brand-neutral leading-relaxed mb-6">
+                تقنيات علاجية لتحسين الحركة وتقليل الألم والتيبس.
+              </p>
+            </div>
+            <div>
+              <a
+                href="#"
+                class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary hover:text-brand-secondary group-hover:translate-x-[-2px] transition-all"
+              >
+                <span>اعرف المزيد</span>
+                <span class="material-symbols-outlined text-base"
+                  >arrow_left</span
+                >
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 6: تحسين الحركة والتقوية -->
+          <div
+            class="bg-white rounded-2xl p-7 border border-brand-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between group"
+          >
+            <div>
+              <div
+                class="w-12 h-12 rounded-xl bg-brand-tertiary/30 text-brand-primary flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-200"
+              >
+                <span class="material-symbols-outlined text-2xl"
+                  >fitness_center</span
+                >
+              </div>
+              <h3 class="text-xl font-bold text-slate-800 mb-2">
+                تحسين الحركة والتقوية
+              </h3>
+              <p class="text-sm text-brand-neutral leading-relaxed mb-6">
+                تمارين علاجية لتحسين القوة والثبات والحركة اليومية.
+              </p>
+            </div>
+            <div>
+              <a
+                href="#"
+                class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary hover:text-brand-secondary group-hover:translate-x-[-2px] transition-all"
+              >
+                <span>اعرف المزيد</span>
+                <span class="material-symbols-outlined text-base"
+                  >arrow_left</span
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section Bottom CTAs -->
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
+        >
+          <a
+            href="#"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-brand-primary text-white text-base font-semibold shadow-sm hover:bg-brand-primary-hover active:scale-[0.98] transition-all"
+          >
+            <span>احجز موعد</span>
+            <span class="material-symbols-outlined text-lg"
+              >calendar_month</span
+            >
+          </a>
+          <a
+            href="#conditions-section"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-white text-brand-primary border border-brand-primary/30 hover:border-brand-primary text-base font-semibold hover:bg-brand-tertiary/10 transition-all"
+          >
+            <span>اعرف أكثر عن الخدمات</span>
+            <span class="material-symbols-outlined text-lg"
+              >arrow_downward</span
+            >
+          </a>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- SECTION 2: الحالات التي نعالجها (Conditions We Treat) -->
+      <!-- ================================================== -->
+      <section
+        id="conditions-section"
+        class="py-16 md:py-20 bg-white border-t border-brand-border-subtle"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Section Header -->
+          <div class="text-center max-w-2xl mx-auto mb-12 md:mb-14">
+            <span
+              class="inline-block px-3.5 py-1 rounded-full text-xs font-semibold bg-brand-secondary/15 text-brand-primary mb-3"
+            >
+              تشخيص ورعاية دقيقة
+            </span>
+            <h2
+              class="text-3xl md:text-4xl font-bold text-brand-primary tracking-tight mb-3"
+            >
+              الحالات التي نعالجها
+            </h2>
+            <p class="text-base text-brand-neutral leading-relaxed">
+              برامج علاجية متخصصة ومصممة بدقة للتعامل مع مختلف الإصابات والآلام
+              الحركية.
+            </p>
+          </div>
+
+          <!-- 6 Condition Cards Grid (3 Columns on Desktop) -->
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12"
+          >
+            <!-- Condition 1: آلام الظهر والرقبة -->
+            <div
+              class="bg-brand-neutral-light/70 rounded-2xl p-7 border border-brand-border-subtle hover:border-brand-primary/40 hover:bg-white shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between group"
+            >
+              <div>
+                <div
+                  class="w-12 h-12 rounded-xl bg-white text-brand-primary border border-brand-border-subtle flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-200 shadow-xs"
+                >
+                  <span class="material-symbols-outlined text-2xl"
+                    >airline_seat_recline_normal</span
+                  >
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">
+                  آلام الظهر والرقبة
+                </h3>
+                <p class="text-sm text-brand-neutral leading-relaxed mb-6">
+                  علاج الانزلاق الغضروفي، الشد العضلي، وتصحيح انحناءات العمود
+                  الفقري.
+                </p>
+              </div>
+              <div>
+                <a
+                  href="#"
+                  class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary hover:text-brand-secondary group-hover:translate-x-[-2px] transition-all"
+                >
+                  <span>اعرف المزيد</span>
+                  <span class="material-symbols-outlined text-base"
+                    >arrow_left</span
+                  >
+                </a>
+              </div>
+            </div>
+
+            <!-- Condition 2: إصابات الركبة -->
+            <div
+              class="bg-brand-neutral-light/70 rounded-2xl p-7 border border-brand-border-subtle hover:border-brand-primary/40 hover:bg-white shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between group"
+            >
+              <div>
+                <div
+                  class="w-12 h-12 rounded-xl bg-white text-brand-secondary border border-brand-border-subtle flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-200 shadow-xs"
+                >
+                  <span class="material-symbols-outlined text-2xl">blind</span>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">
+                  إصابات الركبة
+                </h3>
+                <p class="text-sm text-brand-neutral leading-relaxed mb-6">
+                  تأهيل قطع الرباط الصليبي، غضروف الركبة، وخشونة المفاصل
+                  المتقدمة.
+                </p>
+              </div>
+              <div>
+                <a
+                  href="#"
+                  class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary hover:text-brand-secondary group-hover:translate-x-[-2px] transition-all"
+                >
+                  <span>اعرف المزيد</span>
+                  <span class="material-symbols-outlined text-base"
+                    >arrow_left</span
+                  >
+                </a>
+              </div>
+            </div>
+
+            <!-- Condition 3: إصابات الكتف -->
+            <div
+              class="bg-brand-neutral-light/70 rounded-2xl p-7 border border-brand-border-subtle hover:border-brand-primary/40 hover:bg-white shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between group"
+            >
+              <div>
+                <div
+                  class="w-12 h-12 rounded-xl bg-white text-brand-primary border border-brand-border-subtle flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-200 shadow-xs"
+                >
+                  <span class="material-symbols-outlined text-2xl"
+                    >front_hand</span
+                  >
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">
+                  إصابات الكتف
+                </h3>
+                <p class="text-sm text-brand-neutral leading-relaxed mb-6">
+                  علاج متلازمة الكتف المتجمدة، تمزق أوتار الكفة المدورة،
+                  والتهابات المفصل.
+                </p>
+              </div>
+              <div>
+                <a
+                  href="#"
+                  class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary hover:text-brand-secondary group-hover:translate-x-[-2px] transition-all"
+                >
+                  <span>اعرف المزيد</span>
+                  <span class="material-symbols-outlined text-base"
+                    >arrow_left</span
+                  >
+                </a>
+              </div>
+            </div>
+
+            <!-- Condition 4: إصابات الملاعب -->
+            <div
+              class="bg-brand-neutral-light/70 rounded-2xl p-7 border border-brand-border-subtle hover:border-brand-primary/40 hover:bg-white shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between group"
+            >
+              <div>
+                <div
+                  class="w-12 h-12 rounded-xl bg-white text-brand-primary border border-brand-border-subtle flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-200 shadow-xs"
+                >
+                  <span class="material-symbols-outlined text-2xl"
+                    >directions_run</span
+                  >
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">
+                  إصابات الملاعب
+                </h3>
+                <p class="text-sm text-brand-neutral leading-relaxed mb-6">
+                  التواء الكاحل، التمزقات العضلية، والعودة التدريجية للمنافسات
+                  الرياضية.
+                </p>
+              </div>
+              <div>
+                <a
+                  href="#"
+                  class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary hover:text-brand-secondary group-hover:translate-x-[-2px] transition-all"
+                >
+                  <span>اعرف المزيد</span>
+                  <span class="material-symbols-outlined text-base"
+                    >arrow_left</span
+                  >
+                </a>
+              </div>
+            </div>
+
+            <!-- Condition 5: آلام المفاصل والعضلات -->
+            <div
+              class="bg-brand-neutral-light/70 rounded-2xl p-7 border border-brand-border-subtle hover:border-brand-primary/40 hover:bg-white shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between group"
+            >
+              <div>
+                <div
+                  class="w-12 h-12 rounded-xl bg-white text-brand-secondary border border-brand-border-subtle flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-200 shadow-xs"
+                >
+                  <span class="material-symbols-outlined text-2xl"
+                    >medication</span
+                  >
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">
+                  آلام المفاصل والعضلات
+                </h3>
+                <p class="text-sm text-brand-neutral leading-relaxed mb-6">
+                  التهاب الأوتار، الإجهاد العضلي المزمن، وتخفيف آلام المفاصل
+                  العامة.
+                </p>
+              </div>
+              <div>
+                <a
+                  href="#"
+                  class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary hover:text-brand-secondary group-hover:translate-x-[-2px] transition-all"
+                >
+                  <span>اعرف المزيد</span>
+                  <span class="material-symbols-outlined text-base"
+                    >arrow_left</span
+                  >
+                </a>
+              </div>
+            </div>
+
+            <!-- Condition 6: محدودية الحركة -->
+            <div
+              class="bg-brand-neutral-light/70 rounded-2xl p-7 border border-brand-border-subtle hover:border-brand-primary/40 hover:bg-white shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between group"
+            >
+              <div>
+                <div
+                  class="w-12 h-12 rounded-xl bg-white text-brand-primary border border-brand-border-subtle flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-200 shadow-xs"
+                >
+                  <span class="material-symbols-outlined text-2xl"
+                    >transfer_within_a_station</span
+                  >
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">
+                  محدودية الحركة
+                </h3>
+                <p class="text-sm text-brand-neutral leading-relaxed mb-6">
+                  استعادة المدى الحركي الكامل وتخفيف التيبس بعد الكسور وفترات
+                  التثبيت.
+                </p>
+              </div>
+              <div>
+                <a
+                  href="#"
+                  class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary hover:text-brand-secondary group-hover:translate-x-[-2px] transition-all"
+                >
+                  <span>اعرف المزيد</span>
+                  <span class="material-symbols-outlined text-base"
+                    >arrow_left</span
+                  >
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section Bottom Link -->
+          <div class="text-center pt-2">
+            <p
+              class="text-sm text-brand-neutral inline-flex items-center gap-2"
+            >
+              <span>مش متأكد من تشخيص حالتك؟</span>
+              <a
+                href="#"
+                class="text-brand-primary font-bold hover:underline inline-flex items-center gap-1"
+              >
+                <span>احجز جلسة تقييم شاملة مع الطبيب</span>
+                <span class="material-symbols-outlined text-sm"
+                  >arrow_left</span
+                >
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Consultation / Quick Help Callout -->
+      <section class="max-w-5xl mx-auto px-4 sm:px-6 my-16">
+        <div
+          class="bg-white rounded-2xl border border-brand-border-subtle p-8 md:p-10 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6"
+        >
+          <div class="flex items-center gap-5">
+            <div
+              class="w-14 h-14 rounded-2xl bg-brand-tertiary/20 text-brand-primary flex items-center justify-center shrink-0"
+            >
+              <span class="material-symbols-outlined text-3xl"
+                >support_agent</span
+              >
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-800 mb-1">
+                مش عارف تبدأ بإيه أو محتار بين الخدمات؟
+              </h3>
+              <p class="text-sm text-brand-neutral leading-relaxed">
+                فريق الاستقبال الطبي في عيادة إتقان جاهز لمساعدتك في تحديد
+                الخدمة والبرنامج الأنسب.
+              </p>
+            </div>
+          </div>
+          <a
+            href="#"
+            class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white border border-brand-primary text-brand-primary font-bold hover:bg-brand-primary hover:text-white transition-all"
+          >
+            <span>تواصل مع العيادة</span>
+            <span class="material-symbols-outlined text-lg">call</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Global Arabic Footer -->
+    <footer
+      class="bg-brand-primary text-white border-t border-brand-primary-hover"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          <!-- Col 1: Brand Info -->
+          <div class="md:col-span-2">
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white"
+              >
+                <span class="material-symbols-outlined text-2xl"
+                  >health_and_safety</span
+                >
+              </div>
+              <span class="text-xl font-bold tracking-tight"
+                >إتقان للعلاج الطبيعي والتأهيل</span
+              >
+            </div>
+            <p class="text-sm text-slate-200/90 leading-relaxed max-w-md mb-6">
+              منظومة علاجية متكاملة تقدم أحدث بروتوكولات التأهيل الحركي، علاج
+              إصابات الملاعب، وتأهيل العمود الفقري والمفاصل وفق معايير الجودة
+              الطبية بجمهورية مصر العربية.
+            </p>
+            <div
+              class="flex items-center gap-2 text-xs text-brand-tertiary bg-white/5 py-2 px-3.5 rounded-lg w-fit"
+            >
+              <span class="material-symbols-outlined text-base">verified</span>
+              <span
+                >منشأة طبية مرخصة من وزارة الصحة والسكان المصرية برقم 4892 /
+                ق</span
+              >
+            </div>
+          </div>
+
+          <!-- Col 2: Quick Links -->
+          <div>
+            <h4 class="text-base font-bold text-white mb-4">روابط سريعة</h4>
+            <ul class="space-y-2.5 text-sm text-slate-200">
+              <li>
+                <a href="#" class="hover:text-brand-tertiary transition-colors"
+                  >عن العيادة</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services-section"
+                  class="hover:text-brand-tertiary transition-colors"
+                  >خدمات العيادة</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#conditions-section"
+                  class="hover:text-brand-tertiary transition-colors"
+                  >الحالات التي نعالجها</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-brand-tertiary transition-colors"
+                  >فريق الأطباء والخبراء</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-brand-tertiary transition-colors"
+                  >حجز موعد كشف أو تقييم</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Contact & Branches (Egypt) -->
+          <div>
+            <h4 class="text-base font-bold text-white mb-4">
+              بيانات التواصل والفروع
+            </h4>
+            <div class="space-y-3 text-sm text-slate-200">
+              <div class="flex items-start gap-2">
+                <span
+                  class="material-symbols-outlined text-base mt-0.5 text-brand-tertiary"
+                  >location_on</span
+                >
+                <span
+                  >شارع مصدق، متفرع من محيي الدين أبو العز، الدقي، الجيزة،
+                  مصر</span
+                >
+              </div>
+              <div class="flex items-center gap-2">
+                <span
+                  class="material-symbols-outlined text-base text-brand-tertiary"
+                  >call</span
+                >
+                <span dir="ltr">+20 10 2345 6789 / 02 3762 0000</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span
+                  class="material-symbols-outlined text-base text-brand-tertiary"
+                  >schedule</span
+                >
+                <span>السبت - الخميس: 9:00 ص - 10:00 م</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Copyright & Compliance -->
+        <div
+          class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-300 gap-4"
+        >
+          <div>
+            © 2025 عيادات إتقان للعلاج الطبيعي والتأهيل الطبي. جميع الحقوق
+            محفوظة — جمهورية مصر العربية.
+          </div>
+          <div class="flex items-center gap-6">
+            <a href="#" class="hover:text-white transition-colors"
+              >الشروط والأحكام</a
+            >
+            <a href="#" class="hover:text-white transition-colors"
+              >سياسة الخصوصية</a
+            >
+            <a href="#" class="hover:text-white transition-colors"
+              >ترخيص وزارة الصحة</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

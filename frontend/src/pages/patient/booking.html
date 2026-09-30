@@ -1,0 +1,707 @@
+<!doctype html>
+
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>اختر الطبيب - عيادات إتقان للعلاج الطبيعي والتأهيل</title>
+    <link href="../../output.css" rel="stylesheet" />
+    <!-- Google Fonts: Cairo & Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Material Symbols Outlined -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <style>
+      .material-symbols-outlined {
+        font-family: "Material Symbols Outlined" !important;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 20px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-smoothing: antialiased;
+        font-feature-settings: "liga";
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface-page text-neutral-900 antialiased flex flex-col min-h-screen"
+  >
+    <!-- TopNavBar -->
+    <header
+      class="bg-white border-b border-neutral-200 sticky top-0 z-50 shadow-sm"
+    >
+      <div
+        class="flex items-center justify-between w-full max-w-7xl mx-auto px-4 md:px-8 py-3.5"
+      >
+        <a class="flex items-center gap-3 group" href="home.html">
+          <div
+            class="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center shadow-sm"
+          >
+            <span class="material-symbols-outlined text-2xl"
+              >accessibility_new</span
+            >
+          </div>
+          <div class="flex flex-col">
+            <span
+              class="text-lg font-bold text-primary tracking-tight leading-tight"
+              >عيادة إتقان</span
+            >
+            <span class="text-xs text-neutral">للعلاج الطبيعي والتأهيل</span>
+          </div>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm">
+          <a
+            class="text-neutral hover:text-primary font-medium transition-colors"
+            href="home.html"
+            >الرئيسية</a
+          >
+          <a
+            class="text-neutral hover:text-primary font-medium transition-colors"
+            href="home.html#services"
+            >الخدمات</a
+          >
+          <a
+            class="text-primary font-bold border-b-2 border-primary pb-1"
+            href="our-doctors.html"
+            >الأطباء</a
+          >
+          <a
+            class="text-neutral hover:text-primary font-medium transition-colors"
+            href="home.html#contact"
+            >تواصل معنا</a
+          >
+        </nav>
+        <a
+          class="inline-flex text-sm font-semibold text-neutral hover:text-primary px-3 py-2 rounded-lg hover:bg-neutral-50 transition-all"
+          href="../auth/login.html"
+          >تسجيل الدخول</a
+        >
+      </div>
+    </header>
+    <!-- Main Content Area -->
+    <main class="flex-grow w-full max-w-7xl mx-auto px-4 md:px-8 py-6 md:py-8">
+      <!-- Breadcrumbs & Step Indicator -->
+      <div
+        class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6"
+      >
+        <nav
+          aria-label="Breadcrumb"
+          class="flex items-center gap-2 text-sm text-neutral"
+        >
+          <a class="hover:text-primary transition-colors" href="#">الرئيسية</a>
+          <span class="material-symbols-outlined text-sm">chevron_left</span>
+          <span class="text-primary font-semibold">الأطباء</span>
+        </nav>
+        <!-- Booking Steps Indicator -->
+        <div class="flex items-center gap-3">
+          <div class="flex items-center gap-1.5">
+            <span
+              class="w-6 h-6 rounded-full text-white text-xs flex items-center justify-center font-bold bg-primary"
+              >1</span
+            >
+            <span class="font-bold text-xs text-primary">اختيار الطبيب</span>
+          </div>
+          <span class="w-5 h-0.5 bg-secondary"></span>
+          <div class="flex items-center gap-1.5">
+            <span
+              class="w-6 h-6 rounded-full bg-neutral-200 text-xs flex items-center justify-center font-semibold text-neutral"
+              >2</span
+            >
+            <span class="text-xs text-neutral">الميعاد والفرع</span>
+          </div>
+          <span class="w-5 h-0.5 bg-neutral-200"></span>
+          <div class="flex items-center gap-1.5">
+            <span
+              class="w-6 h-6 rounded-full bg-neutral-200 text-xs flex items-center justify-center font-semibold text-neutral"
+              >3</span
+            >
+            <span class="text-xs text-neutral">تأكيد الحجز</span>
+          </div>
+        </div>
+      </div>
+      <!-- Page Header -->
+      <div class="mb-6">
+        <div
+          class="hidden mb-3 inline-flex items-center gap-2 rounded-lg border border-secondary-200 bg-secondary-50 px-3 py-2 text-sm font-semibold text-secondary-700"
+          id="selected-doctor-banner"
+        >
+          <span class="material-symbols-outlined text-base">verified</span>
+          تم اختيار د. أحمد منصور لحجزك
+        </div>
+        <h1
+          class="text-2xl md:text-3xl font-bold text-primary-900 mb-1"
+          id="booking-title"
+        >
+          اختر الطبيب
+        </h1>
+        <p class="text-sm md:text-base text-neutral" id="booking-description">
+          اختر الطبيب الذي ترغب في الحجز معه لبدء رحلتك العلاجية
+        </p>
+      </div>
+      <!-- Search Bar & Filters -->
+      <section aria-label="Search and Filter" class="mb-8">
+        <div
+          class="bg-white p-4 rounded-2xl border border-neutral-100 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4"
+        >
+          <!-- Search Input -->
+          <div class="relative flex-1 max-w-md">
+            <span
+              class="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-neutral"
+              >search</span
+            >
+            <input
+              class="w-full h-11 pr-11 pl-4 rounded-xl bg-surface-page border border-neutral-200 text-sm focus:outline-none focus:border-primary focus:bg-white transition-all text-neutral-900 placeholder-neutral"
+              placeholder="ابحث باسم الطبيب أو التخصص..."
+              type="text"
+            />
+          </div>
+          <!-- Pill Filters -->
+          <div
+            class="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0 scrollbar-none"
+          >
+            <span
+              class="whitespace-nowrap font-medium text-xs text-neutral flex items-center gap-1 ml-1"
+            >
+              <span class="material-symbols-outlined text-base">filter_alt</span
+              >التخصص:
+            </span>
+            <button
+              class="h-9 px-4 rounded-full text-white bg-primary font-semibold text-xs whitespace-nowrap transition-colors"
+              type="button"
+            >
+              الكل
+            </button>
+            <button
+              class="h-9 px-4 rounded-full bg-white border border-neutral-200 text-neutral hover:text-primary hover:border-primary font-medium text-xs whitespace-nowrap transition-colors"
+              type="button"
+            >
+              إصابات الملاعب
+            </button>
+            <button
+              class="h-9 px-4 rounded-full bg-white border border-neutral-200 text-neutral hover:text-primary hover:border-primary font-medium text-xs whitespace-nowrap transition-colors"
+              type="button"
+            >
+              العمود الفقري
+            </button>
+            <button
+              class="h-9 px-4 rounded-full bg-white border border-neutral-200 text-neutral hover:text-primary hover:border-primary font-medium text-xs whitespace-nowrap transition-colors"
+              type="button"
+            >
+              تأهيل الجراحات
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- 4 Doctors Grid -->
+      <section
+        aria-label="Doctors Grid"
+        class="grid grid-cols-1 md:grid-cols-2 gap-6"
+      >
+        <!-- Doctor 1: د. أحمد منصور -->
+        <article
+          class="bg-white rounded-2xl p-6 border border-neutral-100 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
+        >
+          <div>
+            <!-- Top Row -->
+            <div class="flex gap-4 items-start mb-4">
+              <div
+                class="relative w-20 h-20 rounded-xl overflow-hidden shrink-0 bg-neutral-100 border border-neutral-200"
+              >
+                <img
+                  alt="د. أحمد منصور"
+                  class="w-full h-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP26MALQJ_9Otxw4pJspbrjMJZBpJ7L-BjUlfL3N5a6l0e9zgl-zVZ3Uq4L-QJyHiLKyd19GUe2fdGitEWAyvL8f7EiF0g3Ra79QFEe2fTFQbTcXFHJ_4M6lUsQILMJBC_-CVO-FXuTgOdmSjUwZgnI5ae7Up-B_iB2aD8cdTp6wb-wDWoeUpS2z6HKQ9Q-O2KbtJIZ1Pmk6HP3PDa8X98aGAJrB2UcQyu_-H3nzZThfcxvS-LPI7NMA"
+                />
+              </div>
+              <div class="flex-grow min-w-0">
+                <h3 class="text-xl font-bold text-neutral-900 leading-tight">
+                  د. أحمد منصور
+                </h3>
+                <p class="text-sm text-neutral mt-1 font-normal">
+                  استشاري العلاج الطبيعي وتأهيل الإصابات الرياضية
+                </p>
+                <div
+                  class="flex items-center gap-1.5 text-xs text-neutral mt-1.5"
+                >
+                  <span class="material-symbols-outlined text-sm text-primary"
+                    >workspace_premium</span
+                  >
+                  <span>14 سنة خبرة</span>
+                </div>
+              </div>
+            </div>
+            <!-- Middle: Location & 2 Tags -->
+            <div class="space-y-3 mb-5">
+              <div class="flex items-center gap-1.5 text-xs text-neutral">
+                <span class="material-symbols-outlined text-sm text-primary"
+                  >location_on</span
+                >
+                <span>فرع الدقي، الجيزة</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-tertiary-100 text-primary text-xs px-3 py-1 rounded-md font-medium"
+                  >إصابات الركبة</span
+                >
+                <span
+                  class="bg-tertiary-100 text-primary text-xs px-3 py-1 rounded-md font-medium"
+                  >إعادة التأهيل الرياضي</span
+                >
+              </div>
+            </div>
+            <!-- Bottom Info: Availability -->
+            <div
+              class="flex items-center gap-2 text-xs text-neutral pb-4 border-b border-neutral-100"
+            >
+              <span class="material-symbols-outlined text-base text-secondary"
+                >event_available</span
+              >
+              <span
+                >أقرب موعد متاح:
+                <span class="font-semibold text-primary"
+                  >اليوم 6:30 م</span
+                ></span
+              >
+            </div>
+          </div>
+          <!-- Action Buttons -->
+          <div class="pt-4 flex items-center gap-3">
+            <a
+              class="flex-1 bg-primary text-white py-2.5 rounded-xl font-semibold hover:bg-primary-700 transition-colors text-sm text-center"
+              href="appointment.html?doctor=ahmed-mansour"
+            >
+              اختيار الطبيب
+            </a>
+            <a
+              class="flex-1 bg-white border border-primary text-primary py-2.5 rounded-xl font-semibold hover:bg-tertiary-100 transition-colors text-sm text-center"
+              href="doctor-profile.html?doctor=ahmed-mansour"
+            >
+              عرض الملف الشخصي
+            </a>
+          </div>
+        </article>
+        <!-- Doctor 2: د. سارة محمود -->
+        <article
+          class="bg-white rounded-2xl p-6 border border-neutral-100 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
+        >
+          <div>
+            <!-- Top Row -->
+            <div class="flex gap-4 items-start mb-4">
+              <div
+                class="relative w-20 h-20 rounded-xl overflow-hidden shrink-0 bg-neutral-100 border border-neutral-200"
+              >
+                <img
+                  alt="د. سارة محمود"
+                  class="w-full h-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL0KZIiuAsBdtHOvW5AvzMKQyluF-vkoyFyB_Q09_SRD7JH8zhO0pphW8bNL6DPnOf-RKPdlsJMMiOg1guGNScR1VPfzOPJt2mVyXYRg8GcOA5xJL87ySB8u_y0K1insqXN85eqLi20j5biJDM0JMJG1RN39xrB3Z8Gp7XGnhfHnoBtEdZZnYccBS8lNxQj0p_DYPZs_kMzNmX4vnmm-TJpHCQhpsgbaaD5WuCcsex-HtSVQWTMpSVDQ"
+                />
+              </div>
+              <div class="flex-grow min-w-0">
+                <h3 class="text-xl font-bold text-neutral-900 leading-tight">
+                  د. سارة محمود
+                </h3>
+                <p class="text-sm text-neutral mt-1 font-normal">
+                  أخصائية تأهيل العمود الفقري والمفاصل
+                </p>
+                <div
+                  class="flex items-center gap-1.5 text-xs text-neutral mt-1.5"
+                >
+                  <span class="material-symbols-outlined text-sm text-primary"
+                    >workspace_premium</span
+                  >
+                  <span>9 سنوات خبرة</span>
+                </div>
+              </div>
+            </div>
+            <!-- Middle: Location & 2 Tags -->
+            <div class="space-y-3 mb-5">
+              <div class="flex items-center gap-1.5 text-xs text-neutral">
+                <span class="material-symbols-outlined text-sm text-primary"
+                  >location_on</span
+                >
+                <span>فرع الدقي، الجيزة</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-tertiary-100 text-primary text-xs px-3 py-1 rounded-md font-medium"
+                  >آلام الظهر والرقبة</span
+                >
+                <span
+                  class="bg-tertiary-100 text-primary text-xs px-3 py-1 rounded-md font-medium"
+                  >الانزلاق الغضروفي</span
+                >
+              </div>
+            </div>
+            <!-- Bottom Info: Availability -->
+            <div
+              class="flex items-center gap-2 text-xs text-neutral pb-4 border-b border-neutral-100"
+            >
+              <span class="material-symbols-outlined text-base text-secondary"
+                >event_available</span
+              >
+              <span
+                >أقرب موعد متاح:
+                <span class="font-semibold text-primary"
+                  >غداً 11:00 ص</span
+                ></span
+              >
+            </div>
+          </div>
+          <!-- Action Buttons -->
+          <div class="pt-4 flex items-center gap-3">
+            <a
+              class="flex-1 bg-primary text-white py-2.5 rounded-xl font-semibold hover:bg-primary-700 transition-colors text-sm text-center"
+              href="appointment.html?doctor=sara-mahmoud"
+            >
+              اختيار الطبيب
+            </a>
+            <a
+              class="flex-1 bg-white border border-primary text-primary py-2.5 rounded-xl font-semibold hover:bg-tertiary-100 transition-colors text-sm text-center"
+              href="doctor-profile.html?doctor=sara-mahmoud"
+            >
+              عرض الملف الشخصي
+            </a>
+          </div>
+        </article>
+        <!-- Doctor 3: د. طارق عزت -->
+        <article
+          class="bg-white rounded-2xl p-6 border border-neutral-100 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
+        >
+          <div>
+            <!-- Top Row -->
+            <div class="flex gap-4 items-start mb-4">
+              <div
+                class="relative w-20 h-20 rounded-xl overflow-hidden shrink-0 bg-neutral-100 border border-neutral-200"
+              >
+                <img
+                  alt="د. طارق عزت"
+                  class="w-full h-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdnOojuNPTndkTyzpFAwTyfbGFrAl1UjaLImxXx4gCa8fpoqsIm8b7-_dSNZ6RWaOljp2NhcHoX7kmr-Jf8fKF6GT6-9sJ51yIaEVby5-_WZhvPtBFdQGbzeyd4ggbCkSGenD4kEF5DZIr-3pD_uCmUofQnHpNBwh5SFf-7vriRxR4qjTBVPR1R8FqkxU8jyzt5IeJl0b3HvRPTbBTwMOe7TJ4aQOdJZStO2Tbte-bDAZrvjd-FRD3Lw"
+                />
+              </div>
+              <div class="flex-grow min-w-0">
+                <h3 class="text-xl font-bold text-neutral-900 leading-tight">
+                  د. طارق عزت
+                </h3>
+                <p class="text-sm text-neutral mt-1 font-normal">
+                  أخصائي العلاج الطبيعي الرياضي وإصابات الملاعب
+                </p>
+                <div
+                  class="flex items-center gap-1.5 text-xs text-neutral mt-1.5"
+                >
+                  <span class="material-symbols-outlined text-sm text-primary"
+                    >workspace_premium</span
+                  >
+                  <span>10 سنوات خبرة</span>
+                </div>
+              </div>
+            </div>
+            <!-- Middle: Location & 2 Tags -->
+            <div class="space-y-3 mb-5">
+              <div class="flex items-center gap-1.5 text-xs text-neutral">
+                <span class="material-symbols-outlined text-sm text-primary"
+                  >location_on</span
+                >
+                <span>فرع الشيخ زايد</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-tertiary-100 text-primary text-xs px-3 py-1 rounded-md font-medium"
+                  >تأهيل العضلات والأوتار</span
+                >
+                <span
+                  class="bg-tertiary-100 text-primary text-xs px-3 py-1 rounded-md font-medium"
+                  >تمزق الأربطة</span
+                >
+              </div>
+            </div>
+            <!-- Bottom Info: Availability -->
+            <div
+              class="flex items-center gap-2 text-xs text-neutral pb-4 border-b border-neutral-100"
+            >
+              <span class="material-symbols-outlined text-base text-secondary"
+                >event_available</span
+              >
+              <span
+                >أقرب موعد متاح:
+                <span class="font-semibold text-primary"
+                  >الخميس 4:00 م</span
+                ></span
+              >
+            </div>
+          </div>
+          <!-- Action Buttons -->
+          <div class="pt-4 flex items-center gap-3">
+            <a
+              class="flex-1 bg-primary text-white py-2.5 rounded-xl font-semibold hover:bg-primary-700 transition-colors text-sm text-center"
+              href="appointment.html?doctor=tarek-ezzat"
+            >
+              اختيار الطبيب
+            </a>
+            <a
+              class="flex-1 bg-white border border-primary text-primary py-2.5 rounded-xl font-semibold hover:bg-tertiary-100 transition-colors text-sm text-center"
+              href="doctor-profile.html?doctor=tarek-ezzat"
+            >
+              عرض الملف الشخصي
+            </a>
+          </div>
+        </article>
+        <!-- Doctor 4: د. منى الشامي -->
+        <article
+          class="bg-white rounded-2xl p-6 border border-neutral-100 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
+        >
+          <div>
+            <!-- Top Row -->
+            <div class="flex gap-4 items-start mb-4">
+              <div
+                class="relative w-20 h-20 rounded-xl overflow-hidden shrink-0 bg-neutral-100 border border-neutral-200"
+              >
+                <img
+                  alt="د. منى الشامي"
+                  class="w-full h-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-7_543uXn-e7HOlseAXJgAQfuApUEvUPABj4Sc5iuljnMFrK10QuQdd5MsyLsFtSNqoptqr1YacfP0pCIIJ-Qamkyyr-1ODB3_9qvUj9lj1x3BU22m3NszvWnADVT7Ckueh2WNpQm2XsEHtTKEJohZ-TiCE2GRN3m5SWCmYZAmXmPQEbDgclKgqY3220BfhAz1XuwhcC3h4MZQ4AEZZZS2hHdrieASkalspF8Nq-jBCYW8mJ5pGoiUQ"
+                />
+              </div>
+              <div class="flex-grow min-w-0">
+                <h3 class="text-xl font-bold text-neutral-900 leading-tight">
+                  د. منى الشامي
+                </h3>
+                <p class="text-sm text-neutral mt-1 font-normal">
+                  أخصائية تأهيل العظام وما بعد الجراحات
+                </p>
+                <div
+                  class="flex items-center gap-1.5 text-xs text-neutral mt-1.5"
+                >
+                  <span class="material-symbols-outlined text-sm text-primary"
+                    >workspace_premium</span
+                  >
+                  <span>8 سنوات خبرة</span>
+                </div>
+              </div>
+            </div>
+            <!-- Middle: Location & 2 Tags -->
+            <div class="space-y-3 mb-5">
+              <div class="flex items-center gap-1.5 text-xs text-neutral">
+                <span class="material-symbols-outlined text-sm text-primary"
+                  >location_on</span
+                >
+                <span>فرع الدقي، الجيزة</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-tertiary-100 text-primary text-xs px-3 py-1 rounded-md font-medium"
+                  >تأهيل ما بعد العمليات</span
+                >
+                <span
+                  class="bg-tertiary-100 text-primary text-xs px-3 py-1 rounded-md font-medium"
+                  >استبدال المفاصل</span
+                >
+              </div>
+            </div>
+            <!-- Bottom Info: Availability -->
+            <div
+              class="flex items-center gap-2 text-xs text-neutral pb-4 border-b border-neutral-100"
+            >
+              <span class="material-symbols-outlined text-base text-secondary"
+                >event_available</span
+              >
+              <span
+                >أقرب موعد متاح:
+                <span class="font-semibold text-primary"
+                  >السبت 1:00 م</span
+                ></span
+              >
+            </div>
+          </div>
+          <!-- Action Buttons -->
+          <div class="pt-4 flex items-center gap-3">
+            <a
+              class="flex-1 bg-primary text-white py-2.5 rounded-xl font-semibold hover:bg-primary-700 transition-colors text-sm text-center"
+              href="appointment.html?doctor=mona-elshamy"
+            >
+              اختيار الطبيب
+            </a>
+            <a
+              class="flex-1 bg-white border border-primary text-primary py-2.5 rounded-xl font-semibold hover:bg-tertiary-100 transition-colors text-sm text-center"
+              href="doctor-profile.html?doctor=mona-elshamy"
+            >
+              عرض الملف الشخصي
+            </a>
+          </div>
+        </article>
+      </section>
+      <!-- Simplified Bottom Help Section -->
+      <section
+        aria-label="Support Assistance"
+        class="mt-10 bg-primary-50 rounded-2xl p-6 border border-neutral-200/60"
+      >
+        <div
+          class="flex flex-col sm:flex-row items-center justify-between gap-4"
+        >
+          <div class="flex items-center gap-4">
+            <div
+              class="w-12 h-12 rounded-xl bg-white text-primary shadow-sm flex items-center justify-center shrink-0"
+            >
+              <span class="material-symbols-outlined text-2xl"
+                >support_agent</span
+              >
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-primary">
+                مش عارف تختار الطبيب المناسب؟
+              </h3>
+              <p class="text-sm text-neutral">
+                فريقنا الطبي يساعدك تختار الطبيب الأنسب لحالتك وأهدافك العلاجية.
+              </p>
+            </div>
+          </div>
+          <div class="w-full sm:w-auto">
+            <a
+              class="inline-flex items-center justify-center gap-2 h-11 px-6 rounded-xl bg-white border border-primary text-primary hover:bg-primary hover:text-white font-semibold text-sm transition-all duration-150 w-full sm:w-auto shadow-sm"
+              href="tel:01000000000"
+            >
+              <span class="material-symbols-outlined text-lg"
+                >phone_in_talk</span
+              >
+              <span>تواصل معنا</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-primary text-white mt-12">
+      <div class="w-full max-w-7xl mx-auto px-4 md:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <!-- Brand & Licensing Info -->
+          <div class="md:col-span-2">
+            <div class="flex items-center gap-2 mb-3">
+              <div
+                class="w-8 h-8 rounded-lg bg-white/10 text-white flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined text-xl"
+                  >health_and_safety</span
+                >
+              </div>
+              <h2 class="text-xl font-bold text-white">
+                إتقان للعلاج الطبيعي والتأهيل
+              </h2>
+            </div>
+            <p class="text-primary-200 max-w-md text-sm mb-4 leading-relaxed">
+              منظومة علاجية متكاملة تقدم أحدث بروتوكولات التأهيل الحركي، علاج
+              إصابات الملاعب، وتأهيل العمود الفقري والمفاصل وفق معايير الجودة
+              الطبية بجمهورية مصر العربية.
+            </p>
+            <div class="flex items-center gap-2 text-xs text-primary-200">
+              <span class="material-symbols-outlined text-sm">verified</span>
+              <span
+                >منشأة طبية مرخصة من وزارة الصحة والسكان المصرية برقم ٤٨٩٢ /
+                ق</span
+              >
+            </div>
+          </div>
+          <!-- Quick Links -->
+          <div>
+            <h3 class="font-bold text-white mb-3 text-base">روابط سريعة</h3>
+            <ul class="space-y-2 text-sm text-primary-200">
+              <li>
+                <a class="hover:text-white transition-colors" href="#"
+                  >عن العيادة</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-white transition-colors" href="#"
+                  >الخدمات وبرامج التأهيل</a
+                >
+              </li>
+              <li>
+                <a class="text-white font-semibold" href="#"
+                  >فريق الأطباء والخبراء</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-white transition-colors" href="#"
+                  >ترخيص وزارة الصحة</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Contact & Location Branch -->
+          <div>
+            <h3 class="font-bold text-white mb-3 text-base">
+              بيانات التواصل والفرع
+            </h3>
+            <ul class="space-y-2.5 text-xs text-primary-200">
+              <li class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-sm mt-0.5"
+                  >location_on</span
+                >
+                <span
+                  >شارع مصدق، متفرع من محيي الدين أبو العز، الدقي، الجيزة،
+                  مصر</span
+                >
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm">call</span>
+                <span dir="ltr">+20 10 2345 6789 / 02 3762 0000</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm">schedule</span>
+                <span
+                  >السبت - الخميس: ٩:٠٠ ص - ١٠:٠٠ م (الجمعة استشارات
+                  طارئة)</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Legal Links & Copyright Strip -->
+        <div
+          class="pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-primary-200"
+        >
+          <p class="text-center md:text-right">
+            © ٢٠٢٥ عيادات إتقان للعلاج الطبيعي والتأهيل الطبي. جميع الحقوق
+            محفوظة - جمهورية مصر العربية
+          </p>
+          <div class="flex items-center gap-6">
+            <a class="hover:text-white transition-colors" href="#"
+              >الشروط والأحكام</a
+            >
+            <a class="hover:text-white transition-colors" href="#"
+              >سياسة الخصوصية</a
+            >
+            <a class="hover:text-white transition-colors" href="#"
+              >ترخيص وزارة الصحة</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const bookingParams = new URLSearchParams(window.location.search);
+      if (bookingParams.get("doctor") === "ahmed-mansour") {
+        document
+          .getElementById("selected-doctor-banner")
+          .classList.remove("hidden");
+        document.getElementById("booking-title").textContent =
+          "حجز موعد مع د. أحمد منصور";
+        document.getElementById("booking-description").textContent =
+          "اختر الموعد والفرع المناسبين لإتمام حجزك مع الطبيب المختار.";
+      }
+    </script>
+  </body>
+</html>

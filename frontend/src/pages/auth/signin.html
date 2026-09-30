@@ -1,0 +1,297 @@
+<!doctype html>
+
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>إنشاء حساب جديد - عيادة إتقان للعلاج الطبيعي</title>
+    <link href="../../output.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Cairo:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+        line-height: 1;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface-soft text-neutral-900 antialiased min-h-screen flex flex-col justify-between font-sans selection:bg-tertiary selection:text-primary"
+  >
+    <!-- Header with Logo and Brand -->
+    <header
+      class="w-full bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-tertiary/40"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+        <a class="flex items-center gap-3 group" href="../patient/home.html">
+          <div
+            class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-sm group-hover:bg-primary-800 transition-colors"
+          >
+            <span class="material-symbols-outlined text-2xl">accessibility_new</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-lg font-bold text-primary tracking-tight leading-tight">عيادة إتقان</span>
+            <span class="text-xs text-neutral">للعلاج الطبيعي والتأهيل</span>
+          </div>
+        </a>
+        <a
+          class="text-sm font-medium text-neutral hover:text-primary flex items-center gap-1 transition-colors"
+          href="../patient/home.html"
+        >
+          <span>العودة للرئيسية</span>
+          <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+        </a>
+      </div>
+    </header>
+    <!-- Main Container: Centered Card -->
+    <main class="flex-1 flex items-center justify-center px-4 py-10 sm:py-14 relative overflow-hidden">
+      <div
+        class="absolute -top-32 -left-32 w-96 h-96 bg-tertiary/25 rounded-full blur-3xl pointer-events-none"
+      ></div>
+      <div
+        class="absolute -bottom-32 -right-32 w-96 h-96 bg-secondary/15 rounded-full blur-3xl pointer-events-none"
+      ></div>
+      <div class="w-full max-w-[480px] relative z-10">
+        <!-- Card -->
+        <div
+          class="bg-surface-card rounded-2xl border border-tertiary/40 shadow-card p-6 sm:p-10"
+        >
+          <!-- Header Content -->
+          <div class="text-center mb-8">
+            <div
+              class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-tertiary/30 text-primary mb-4 shadow-inner"
+            >
+              <span class="material-symbols-outlined text-[26px]"
+                >person_add</span
+              >
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-primary tracking-tight mb-2">
+              إنشاء حساب جديد
+            </h1>
+            <p class="text-sm sm:text-base text-neutral">
+              أنشئ حسابك لبدء رحلتك العلاجية وحجز مواعيدك بسهولة.
+            </p>
+          </div>
+          <!-- Registration Form -->
+          <form
+            action="#"
+            class="space-y-5"
+            method="POST"
+            onsubmit="event.preventDefault()"
+          >
+            <!-- الاسم بالكامل -->
+            <div class="space-y-1.5 text-right">
+              <label
+                class="block text-sm font-semibold text-neutral-700"
+                for="full_name"
+                >الاسم بالكامل <span class="text-red-500">*</span></label
+              >
+              <div
+                class="relative focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 rounded-lg border border-neutral-200 bg-white transition-all flex items-center"
+              >
+                <span
+                  class="pr-3.5 text-neutral-600 material-symbols-outlined text-[20px]"
+                  >person</span
+                >
+                <input
+                  class="w-full py-2.5 px-3 bg-transparent border-0 rounded-lg text-neutral-900 placeholder:text-neutral-300 text-sm focus:ring-0"
+                  id="full_name"
+                  name="full_name"
+                  placeholder="مثال: أحمد محمد علي"
+                  required=""
+                  type="text"
+                />
+              </div>
+            </div>
+            <!-- البريد الإلكتروني -->
+            <div class="space-y-1.5 text-right">
+              <label
+                class="block text-sm font-semibold text-neutral-700"
+                for="email"
+                >البريد الإلكتروني <span class="text-red-500">*</span></label
+              >
+              <div
+                class="relative focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 rounded-lg border border-neutral-200 bg-white transition-all flex items-center"
+              >
+                <span
+                  class="pr-3.5 text-neutral-600 material-symbols-outlined text-[20px]"
+                  >mail</span
+                >
+                <input
+                  class="w-full py-2.5 px-3 bg-transparent border-0 rounded-lg text-neutral-900 placeholder:text-neutral-300 text-sm focus:ring-0 text-left placeholder:text-right"
+                  dir="ltr"
+                  id="email"
+                  name="email"
+                  placeholder="example@email.com"
+                  required=""
+                  type="email"
+                />
+              </div>
+            </div>
+            <!-- رقم الموبايل (Egyptian format) -->
+            <div class="space-y-1.5 text-right">
+              <label
+                class="block text-sm font-semibold text-neutral-700"
+                for="mobile"
+                >رقم الموبايل <span class="text-red-500">*</span></label
+              >
+              <div
+                class="relative focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 rounded-lg border border-neutral-200 bg-white transition-all flex items-center"
+              >
+                <div
+                  class="flex items-center gap-1.5 pr-3 pl-3 border-l border-neutral-200 text-neutral text-sm font-medium select-none"
+                  dir="ltr"
+                >
+                  <span class="text-base">🇪🇬</span>
+                  <span class="text-neutral-700 font-semibold">+20</span>
+                </div>
+                <input
+                  class="w-full py-2.5 px-3 bg-transparent border-0 rounded-lg text-neutral-900 placeholder:text-neutral-300 text-sm focus:ring-0 text-left placeholder:text-right"
+                  dir="ltr"
+                  id="mobile"
+                  name="mobile"
+                  placeholder="010xxxxxxxx"
+                  required=""
+                  type="tel"
+                />
+              </div>
+            </div>
+            <!-- كلمة المرور -->
+            <div class="space-y-1.5 text-right">
+              <label
+                class="block text-sm font-semibold text-neutral-700"
+                for="password"
+                >كلمة المرور <span class="text-red-500">*</span></label
+              >
+              <div
+                class="relative focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 rounded-lg border border-neutral-200 bg-white transition-all flex items-center"
+              >
+                <span
+                  class="pr-3.5 text-neutral-600 material-symbols-outlined text-[20px]"
+                  >lock</span
+                >
+                <input
+                  class="w-full py-2.5 px-3 bg-transparent border-0 rounded-lg text-neutral-900 placeholder:text-neutral-300 text-sm focus:ring-0"
+                  id="password"
+                  name="password"
+                  placeholder="8 أحرف على الأقل"
+                  required=""
+                  type="password"
+                />
+                <button
+                  aria-label="تبديل إظهار كلمة المرور"
+                  class="pl-3.5 text-neutral hover:text-primary transition-colors"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >visibility</span
+                  >
+                </button>
+              </div>
+            </div>
+            <!-- تأكيد كلمة المرور -->
+            <div class="space-y-1.5 text-right">
+              <label
+                class="block text-sm font-semibold text-neutral-700"
+                for="confirm_password"
+                >تأكيد كلمة المرور <span class="text-red-500">*</span></label
+              >
+              <div
+                class="relative focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 rounded-lg border border-neutral-200 bg-white transition-all flex items-center"
+              >
+                <span
+                  class="pr-3.5 text-neutral-600 material-symbols-outlined text-[20px]"
+                  >lock_reset</span
+                >
+                <input
+                  class="w-full py-2.5 px-3 bg-transparent border-0 rounded-lg text-neutral-900 placeholder:text-neutral-300 text-sm focus:ring-0"
+                  id="confirm_password"
+                  name="confirm_password"
+                  placeholder="أعد إدخال كلمة المرور"
+                  required=""
+                  type="password"
+                />
+                <button
+                  aria-label="تبديل إظهار كلمة المرور"
+                  class="pl-3.5 text-neutral hover:text-primary transition-colors"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >visibility</span
+                  >
+                </button>
+              </div>
+            </div>
+            <!-- Checkbox: الشروط والأحكام -->
+            <div class="pt-2">
+              <label
+                class="flex items-start gap-2.5 cursor-pointer select-none"
+              >
+                <input
+                  checked=""
+                  class="mt-1 h-4 w-4 rounded border-neutral-300 text-primary focus:ring-primary/20 cursor-pointer"
+                  required=""
+                  type="checkbox"
+                />
+                <span class="text-xs sm:text-sm text-neutral leading-relaxed">
+                  أوافق على
+                  <a
+                    class="text-primary font-semibold hover:underline"
+                    href="#"
+                    >الشروط والأحكام</a
+                  >
+                  و<a
+                    class="text-primary font-semibold hover:underline"
+                    href="#"
+                    >سياسة الخصوصية</a
+                  >
+                  الخاصة بالعيادة
+                </span>
+              </label>
+            </div>
+            <!-- Submit Button -->
+            <div class="pt-3">
+              <button
+                class="w-full py-3 px-6 rounded-lg bg-primary hover:bg-primary-700 text-white font-semibold text-base flex items-center justify-center gap-2 transition-all duration-150 shadow-md hover:shadow-lg active:scale-[0.99]"
+                type="submit"
+              >
+                <span>إنشاء الحساب</span>
+                <span
+                  class="material-symbols-outlined text-[20px] rtl:rotate-180"
+                  >arrow_forward</span
+                >
+              </button>
+            </div>
+            <!-- Bottom Link -->
+            <div class="text-center pt-3 border-t border-neutral-100">
+              <span class="text-sm text-neutral">لديك حساب بالفعل؟</span>
+              <a
+                class="text-sm font-bold text-primary hover:text-secondary transition-colors mr-1"
+                href="login.html"
+                >تسجيل الدخول</a
+              >
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <!-- Simple Footer -->
+    <footer class="w-full bg-white border-t border-tertiary/40 py-6">
+      <p class="max-w-7xl mx-auto px-4 sm:px-6 text-center text-xs text-neutral">
+        © 2025 عيادة إتقان للعلاج الطبيعي والتأهيل الطبي. جميع الحقوق محفوظة.
+      </p>
+    </footer>
+  </body>
+</html>
